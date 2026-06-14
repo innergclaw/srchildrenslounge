@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book Now | SR Sensory Gym</title>
+  <meta name="description" content="Book open play, daily passes, and summer open play passes at SR Sensory Gym in Willow Grove, PA." />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+    :root {
+      --forest: #19c86a;
+      --sun: #ffa41b;
+      --poppy: #f53d2d;
+      --cream: #ffffff;
+      --warm-white: #ffffff;
+      --ink: #1f1f1f;
+      --muted: rgba(31, 31, 31, .68);
+      --line: rgba(31, 31, 31, .16);
+      --shadow: 0 18px 50px rgba(31, 31, 31, .1);
+      --radius-xl: 34px;
+      --radius-lg: 24px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Manrope, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 10% 10%, rgba(25,200,106,.08) 0 180px, transparent 182px),
+        radial-gradient(circle at 90% 14%, rgba(255,164,27,.1) 0 180px, transparent 182px),
+        linear-gradient(180deg, #ffffff 0%, rgba(255,164,27,.07) 100%);
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    h1, h2, h3, p { margin: 0; }
+
+    h1, h2, h3 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      line-height: .95;
+      letter-spacing: -.03em;
+      font-weight: 600;
+    }
+
+    .page {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 20px 0 56px;
+    }
+
+    .site-header {
+      display: grid;
+      justify-items: center;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 18px 16px;
+      border: 2px solid rgba(25, 200, 106, .34);
+      border-radius: 32px;
+      background: rgba(255, 255, 255, .92);
+      backdrop-filter: blur(10px);
+      box-shadow: var(--shadow);
+      position: sticky;
+      top: 16px;
+      z-index: 10;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      min-width: 0;
+      text-align: center;
+    }
+
+    .brand img {
+      width: 82px;
+      height: 82px;
+      object-fit: contain;
+    }
+
+    .brand strong {
+      display: block;
+      font-size: 1.12rem;
+      font-weight: 800;
+    }
+
+    .brand span,
+    .eyebrow,
+    .info-label,
+    .form-field label {
+      color: var(--muted);
+      font-size: .76rem;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .brand span { display: block; margin-top: 5px; }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding-top: 12px;
+      border-top: 1px solid rgba(31,31,31,.09);
+    }
+
+    .nav-links a,
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 40px;
+      padding: 0 12px;
+      border-radius: 999px;
+      font-size: .74rem;
+      font-weight: 700;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
+    .nav-links a {
+      background: rgba(255,255,255,.9);
+      border: 1px solid rgba(31,31,31,.08);
+    }
+
+    .nav-links a[aria-current="page"] {
+      color: #ffffff;
+      border-color: transparent;
+      background: linear-gradient(135deg, var(--forest), rgba(25,200,106,.78));
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
+      gap: 28px;
+      margin-top: 28px;
+      align-items: stretch;
+    }
+
+    .panel,
+    .section,
+    .pass-card,
+    .booking-form,
+    .note-band {
+      border: 2px solid var(--line);
+      border-radius: var(--radius-xl);
+      background: var(--warm-white);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-copy {
+      display: grid;
+      align-content: center;
+      gap: 18px;
+      padding: clamp(28px, 4vw, 44px);
+      border-color: rgba(255, 164, 27, .56);
+      background:
+        radial-gradient(circle at 88% 15%, rgba(255,164,27,.18) 0 120px, transparent 122px),
+        linear-gradient(135deg, #ffffff, rgba(25,200,106,.08));
+    }
+
+    .hero h1 {
+      font-size: clamp(3.8rem, 9vw, 8rem);
+    }
+
+    .hero p,
+    .section-head p,
+    .pass-card p,
+    .note-band p {
+      color: var(--muted);
+      font-size: 1.02rem;
+      line-height: 1.75;
+    }
+
+    .hero-photo {
+      overflow: hidden;
+      min-height: 520px;
+      border-color: rgba(25, 200, 106, .42);
+    }
+
+    .hero-photo img {
+      width: 100%;
+      height: 100%;
+      min-height: 520px;
+      object-fit: cover;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .button {
+      min-height: 48px;
+      padding: 0 18px;
+      border: 1px solid transparent;
+      box-shadow: 0 12px 28px rgba(31,31,31,.1);
+      cursor: pointer;
+    }
+
+    .button.primary {
+      color: #ffffff;
+      background: linear-gradient(135deg, var(--forest), rgba(25,200,106,.78));
+    }
+
+    .button.secondary {
+      color: var(--ink);
+      background: rgba(255,255,255,.86);
+      border-color: rgba(31,31,31,.08);
+    }
+
+    section {
+      margin-top: 28px;
+      scroll-margin-top: 132px;
+    }
+
+    .section,
+    .booking-form {
+      padding: clamp(24px, 3.2vw, 34px);
+    }
+
+    .section {
+      border-color: rgba(25, 200, 106, .42);
+      background: rgba(255,255,255,.78);
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 20px;
+      margin-bottom: 18px;
+    }
+
+    .section-head h2,
+    .booking-form h2 {
+      font-size: clamp(2.3rem, 4.2vw, 4rem);
+    }
+
+    .section-head p {
+      max-width: 520px;
+    }
+
+    .pass-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .pass-card {
+      display: grid;
+      gap: 14px;
+      padding: 26px;
+      border-color: rgba(31,31,31,.1);
+      background: linear-gradient(180deg, #ffffff, rgba(255,164,27,.05));
+    }
+
+    .pass-card:nth-child(1) { border-color: rgba(25,200,106,.52); }
+    .pass-card:nth-child(2) { border-color: rgba(255,164,27,.62); }
+    .pass-card:nth-child(3) { border-color: rgba(245,61,45,.52); }
+
+    .pass-card h3 {
+      font-size: 2.8rem;
+    }
+
+    .price {
+      font-size: 2.1rem;
+      font-weight: 900;
+      letter-spacing: -.04em;
+    }
+
+    .service-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 0 12px;
+      border: 1px solid rgba(31,31,31,.1);
+      border-radius: 999px;
+      background: rgba(255,255,255,.75);
+      color: var(--muted);
+      font-size: .76rem;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .booking-form {
+      border-color: rgba(255, 164, 27, .56);
+      background:
+        radial-gradient(circle at 92% 10%, rgba(25,200,106,.12) 0 110px, transparent 112px),
+        linear-gradient(180deg, #ffffff, rgba(255,164,27,.05));
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 20px;
+    }
+
+    .form-field {
+      display: grid;
+      gap: 7px;
+    }
+
+    .form-field.full {
+      grid-column: 1 / -1;
+    }
+
+    .form-field input,
+    .form-field textarea,
+    .form-field select {
+      width: 100%;
+      border: 1px solid rgba(31,31,31,.18);
+      border-radius: 14px;
+      padding: 13px 14px;
+      color: var(--ink);
+      background: rgba(255,255,255,.86);
+      font: inherit;
+    }
+
+    .form-field textarea {
+      min-height: 104px;
+      resize: vertical;
+    }
+
+    .form-status {
+      grid-column: 1 / -1;
+      min-height: 24px;
+      color: var(--muted);
+      font-weight: 800;
+      line-height: 1.5;
+    }
+
+    .form-status[data-tone="success"] { color: #147943; }
+    .form-status[data-tone="error"] { color: var(--poppy); }
+
+    .note-band {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 18px;
+      padding: 30px;
+      border-color: rgba(245,61,45,.46);
+      background:
+        radial-gradient(circle at 92% 12%, rgba(255,164,27,.18) 0 100px, transparent 102px),
+        linear-gradient(135deg, #ffffff, rgba(245,61,45,.06));
+    }
+
+    .note-band h3 {
+      margin-bottom: 16px;
+      font-size: 2.2rem;
+    }
+
+    @media (max-width: 980px) {
+      .hero,
+      .pass-grid,
+      .note-band {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-photo img {
+        min-height: 420px;
+      }
+    }
+
+    @media (max-width: 760px) {
+      section {
+        scroll-margin-top: 220px;
+      }
+
+      .site-header {
+        padding: 16px 12px;
+        border-radius: 26px;
+      }
+
+      .brand {
+        width: 100%;
+      }
+
+      .brand img {
+        width: 74px;
+        height: 74px;
+      }
+
+      .nav-links {
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding: 12px 2px 5px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+      }
+
+      .nav-links::-webkit-scrollbar {
+        display: none;
+      }
+
+      .nav-links a {
+        flex: 0 0 auto;
+      }
+
+      .hero-actions,
+      .form-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+      .form-field.full,
+      .form-status {
+        grid-column: auto;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="assets/strength-resilience/flow.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="site-header">
+      <a class="brand" href="strength-resilience-children-lounge.html#home">
+        <img src="assets/strength-resilience-logo.png" alt="Strength &amp; Resilience Children Lounge logo" />
+        <div>
+          <strong>SR Sensory Gym</strong>
+          <span>Strength and Resilience Nonprofit Inc.</span>
+        </div>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary">
+        <a href="strength-resilience-children-lounge.html#home">Home</a>
+        <a href="strength-resilience-book-now.html" aria-current="page">Book Now</a>
+        <a href="strength-resilience-book-a-party.html">Book a Party</a>
+        <a href="strength-resilience-services.html">Services</a>
+        <a href="strength-resilience-memberships.html">Memberships</a>
+        <a href="strength-resilience-events.html">Events</a>
+        <a href="strength-resilience-waiver.html">Waiver</a>
+        <details class="nav-shop">
+          <summary>Shop</summary>
+          <div class="nav-shop-menu">
+            <a href="https://square.link/u/NXiAli9T" target="_blank" rel="noopener noreferrer">Socks</a>
+            <a href="https://square.link/u/zEARYSxe" target="_blank" rel="noopener noreferrer">Hat</a>
+            <a href="https://square.link/u/XzsOlg9N" target="_blank" rel="noopener noreferrer">Sweatshirts</a>
+          </div>
+        </details>
+        <a href="https://app.squareup.com/gift/MLZ7ERDANNXQT/order" target="_blank" rel="noopener noreferrer">Gift Card</a>
+        <a href="strength-resilience-children-lounge.html#about">About Us</a>
+        <a href="strength-resilience-faq.html">FAQ's</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <article class="panel hero-copy">
+          <span class="eyebrow">Book now</span>
+          <h1>Open play, daily passes, and summer visits.</h1>
+          <p>
+            Choose the visit option that fits your family, then send the request so the SR Sensory Gym team can confirm availability and next steps.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#book-request">Start booking</a>
+            <a class="button secondary" href="strength-resilience-waiver.html">Complete waiver</a>
+          </div>
+        </article>
+
+        <article class="panel hero-photo">
+          <img src="assets/strength-resilience/sr-gym-main.jpeg" alt="SR Sensory Gym open play room with swings and colorful padded floor tiles" />
+        </article>
+      </section>
+
+      <section class="section" id="passes">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Open play options</span>
+            <h2>Pick your play pass.</h2>
+          </div>
+          <p>
+            This page is focused on booking visits: open play, daily passes, and summer open play specials.
+          </p>
+        </div>
+
+        <div class="pass-grid">
+          <article class="pass-card">
+            <h3>Openplay</h3>
+            <div class="service-meta">
+              <span class="pill">Tue-Sun</span>
+              <span class="pill">Duration varies</span>
+            </div>
+            <div class="price">Starting at $15</div>
+            <p>Flexible open play access for children to explore movement, sensory activities, and safe play.</p>
+            <a class="button primary" href="https://square.link/u/cQNVCKiO" target="_blank" rel="noopener noreferrer">Book open play</a>
+          </article>
+
+          <article class="pass-card">
+            <h3>Daily pass</h3>
+            <div class="service-meta">
+              <span class="pill">Single visit</span>
+              <span class="pill">Open play</span>
+            </div>
+            <div class="price">Request time</div>
+            <p>Plan a one-day visit for your child or family and let the team confirm the best available time.</p>
+            <a class="button primary" href="#book-request">Book daily pass</a>
+          </article>
+
+          <article class="pass-card">
+            <h3>Summer open play</h3>
+            <div class="service-meta">
+              <span class="pill">5 visits - $75</span>
+              <span class="pill">10 visits - $140</span>
+            </div>
+            <div class="price">Save on visits</div>
+            <p>Summer play passes are built for families planning repeat trips to the sensory gym.</p>
+            <a class="button primary" href="#book-request">Book summer pass</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="booking-form" id="book-request">
+        <span class="eyebrow">Booking request</span>
+        <h2>Request open play.</h2>
+        <p style="margin-top: 12px; max-width: 720px; color: var(--muted); line-height: 1.75;">
+          Send the visit details and the SR Sensory Gym team will follow up with availability, payment details, and anything your family needs before arrival.
+        </p>
+
+        <form data-sr-intake-form>
+          <input type="hidden" name="intake_type" value="open_play_booking" />
+          <input type="hidden" name="requested_service" value="Open Play / Daily Pass / Summer Pass Booking" />
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;" aria-hidden="true" />
+
+          <div class="form-grid">
+            <div class="form-field">
+              <label for="booking-first-name">First name</label>
+              <input id="booking-first-name" name="first_name" autocomplete="given-name" required />
+            </div>
+            <div class="form-field">
+              <label for="booking-last-name">Last name</label>
+              <input id="booking-last-name" name="last_name" autocomplete="family-name" required />
+            </div>
+            <div class="form-field">
+              <label for="booking-phone">Phone</label>
+              <input id="booking-phone" name="phone" type="tel" autocomplete="tel" required />
+            </div>
+            <div class="form-field">
+              <label for="booking-email">Email</label>
+              <input id="booking-email" name="email" type="email" autocomplete="email" required />
+            </div>
+            <div class="form-field">
+              <label for="requested-service">Booking type</label>
+              <select id="requested-service" name="membership_interest" required>
+                <option value="">Choose one</option>
+                <option value="Openplay">Openplay</option>
+                <option value="Daily pass">Daily pass</option>
+                <option value="Summer play pass - 5 visits">Summer play pass - 5 visits</option>
+                <option value="Summer play pass - 10 visits">Summer play pass - 10 visits</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label for="preferred-date">Preferred date</label>
+              <input id="preferred-date" name="preferred_date" type="date" />
+            </div>
+            <div class="form-field">
+              <label for="preferred-time">Preferred time</label>
+              <input id="preferred-time" name="preferred_time" placeholder="Example: 3:30 PM" />
+            </div>
+            <div class="form-field">
+              <label for="child-ages">Child age(s)</label>
+              <input id="child-ages" name="child_ages" />
+            </div>
+            <div class="form-field full">
+              <label for="child-names">Child name(s)</label>
+              <input id="child-names" name="child_names" />
+            </div>
+            <div class="form-field full">
+              <label for="booking-message">Notes or questions</label>
+              <textarea id="booking-message" name="message" placeholder="Share sensory notes, first visit questions, preferred callback time, or anything the team should know."></textarea>
+            </div>
+            <p class="form-status" data-sr-form-status aria-live="polite"></p>
+            <button class="button primary" type="submit">Submit booking request</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="note-band">
+        <div>
+          <span class="eyebrow">Before arrival</span>
+          <h3>Waivers still matter.</h3>
+        </div>
+        <div>
+          <p>
+            All children must have a signed waiver before participating. Families can complete the waiver online before open play, daily visits, summer passes, or birthday parties.
+          </p>
+          <div class="hero-actions" style="margin-top: 18px;">
+            <a class="button primary" href="strength-resilience-waiver.html">Complete waiver</a>
+            <a class="button secondary" href="strength-resilience-events.html">View events</a>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="assets/strength-resilience/flow.js"></script>
+  <script src="assets/strength-resilience/sr-family-intake.js"></script>
+</body>
+</html>

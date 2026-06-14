@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>Redirecting | SR Sensory Gym</title>
+    <script>
+      (() => {
+        const routes = {
+          "/about-us": "/index.html#about",
+          "/about-us-1": "/strength-resilience-faq.html",
+          "/blog": "/index.html",
+          "/book-online-1": "/strength-resilience-book-now.html",
+          "/contact-4": "/index.html#connect",
+          "/donate": "/index.html#donate",
+          "/event-list": "/strength-resilience-events.html",
+          "/events": "/strength-resilience-events.html",
+          "/gift-card": "https://app.squareup.com/gift/MLZ7ERDANNXQT/order",
+          "/intake-form": "/index.html#connect",
+          "/monthly-calendar": "/strength-resilience-events.html#calendar",
+          "/plans-pricing": "/strength-resilience-memberships.html",
+          "/services-4": "/strength-resilience-book-a-party.html",
+          "/shop": "/index.html#connect",
+          "/waiver": "/strength-resilience-waiver.html"
+        };
+        const path = window.location.pathname.replace(/\/+$/, "") || "/";
+        window.location.replace(routes[path] || "/index.html");
+      })();
+    </script>
+  </head>
+  <body>
+    <p>Redirecting to SR Sensory Gym...</p>
+  </body>
+</html>
