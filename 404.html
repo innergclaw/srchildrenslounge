@@ -24,8 +24,14 @@
           "/shop": "/index.html#connect",
           "/waiver": "/strength-resilience-waiver.html"
         };
-        const path = window.location.pathname.replace(/\/+$/, "") || "/";
-        window.location.replace(routes[path] || "/index.html");
+        const projectPrefix = window.location.hostname.endsWith("github.io")
+          ? "/srchildrenslounge"
+          : "";
+        const rawPath = window.location.pathname.replace(projectPrefix, "");
+        const path = rawPath.replace(/\/+$/, "") || "/";
+        const destination = routes[path] || "/index.html";
+        const external = destination.startsWith("http");
+        window.location.replace(external ? destination : `${projectPrefix}${destination}`);
       })();
     </script>
   </head>
