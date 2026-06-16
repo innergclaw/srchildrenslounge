@@ -297,6 +297,22 @@
       border-radius: var(--radius-lg);
     }
 
+    .product-cover {
+      overflow: hidden;
+      border-radius: 20px;
+      border: 1px solid var(--soft-line);
+      background: linear-gradient(180deg, rgba(255,255,255,.98), rgba(25,200,106,.06));
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.7);
+    }
+
+    .product-cover img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      object-position: center;
+    }
+
     .product-top {
       display: grid;
       gap: 12px;
@@ -448,15 +464,30 @@
       }
 
       .site-header {
-        top: 10px;
+        position: static;
+        top: auto;
         padding: 14px 12px;
       }
 
       .nav-links {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
         gap: 6px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
       }
 
-      .nav-links a,
+      .nav-links::-webkit-scrollbar {
+        display: none;
+      }
+
+      .nav-links a {
+        width: auto;
+        flex: 0 0 auto;
+        white-space: nowrap;
+      }
+
       .button,
       .ghost-button {
         width: 100%;
@@ -507,14 +538,12 @@
     <main>
       <section class="hero" id="shop">
         <article class="panel hero-copy">
-          <span class="eyebrow">Mini Shop</span>
-          <h1>Merch for the movement.</h1>
           <p>
             This mini shop pulls the current Strength &amp; Resilience merch into one clean page so families can browse the collection without digging through separate store pages.
           </p>
           <div class="hero-actions">
             <a class="button" href="#catalog">Browse merch</a>
-            <a class="ghost-button" href="#shop-links">Update payment links</a>
+            <a class="ghost-button" href="https://app.squareup.com/gift/MLZ7ERDANNXQT/order" target="_blank" rel="noopener noreferrer">Gift Card</a>
           </div>
         </article>
 
@@ -547,6 +576,9 @@
 
         <div class="shop-grid">
           <article class="product-card">
+            <figure class="product-cover">
+              <img src="assets/strength-resilience/sr-grippy-socks-cover.jpg" alt="SR Grippy Socks product image" />
+            </figure>
             <div class="product-top">
               <div class="product-badge">SR</div>
               <span class="card-tag">Accessories</span>
@@ -567,6 +599,9 @@
           </article>
 
           <article class="product-card">
+            <figure class="product-cover">
+              <img src="assets/strength-resilience/sr-hats-cover.jpg" alt="Different Abilities hats product image" />
+            </figure>
             <div class="product-top">
               <div class="product-badge">DA</div>
               <span class="card-tag">Headwear</span>
@@ -578,11 +613,11 @@
             </div>
             <p>Branded hats for families and supporters of the SR mission.</p>
             <ul>
-              <li>Current hat checkout is already active</li>
+              <li>Current hats checkout is already active</li>
               <li>Good entry-price merch option</li>
             </ul>
             <div class="product-actions">
-              <a class="button" href="https://square.link/u/zEARYSxe" target="_blank" rel="noopener noreferrer">Buy hat</a>
+              <a class="button" href="https://square.link/u/zEARYSxe" target="_blank" rel="noopener noreferrer">Buy hats</a>
             </div>
           </article>
 
@@ -607,6 +642,9 @@
           </article>
 
           <article class="product-card">
+            <figure class="product-cover">
+              <img src="assets/strength-resilience/sr-strength-tshirt-cover.png" alt="White Strength and Resilience Sensory Gym t-shirt mockup" />
+            </figure>
             <div class="product-top">
               <div class="product-badge">TS</div>
               <span class="card-tag">Apparel</span>
@@ -627,6 +665,9 @@
           </article>
 
           <article class="product-card">
+            <figure class="product-cover">
+              <img src="assets/strength-resilience/sr-strength-resilience-classic-cover.png" alt="White Strength and Resilience classic t-shirt mockup" />
+            </figure>
             <div class="product-top">
               <div class="product-badge">SC</div>
               <span class="card-tag">Apparel</span>
@@ -728,83 +769,6 @@
         </div>
       </section>
 
-      <section id="shop-links">
-        <div class="link-layout">
-          <article class="link-panel">
-            <span class="eyebrow">Already Connected</span>
-            <h3>Live checkout links.</h3>
-            <p>These products are already connected through Square and ready for customers right now.</p>
-            <div class="live-links">
-              <div class="link-row">
-                <div>
-                  <strong>SR Grippy Socks</strong>
-                  <span>$7 Square checkout</span>
-                </div>
-                <a class="button" href="https://square.link/u/NXiAli9T" target="_blank" rel="noopener noreferrer">Open</a>
-              </div>
-              <div class="link-row">
-                <div>
-                  <strong>Different Abilities Hats</strong>
-                  <span>$20 Square checkout</span>
-                </div>
-                <a class="button" href="https://square.link/u/zEARYSxe" target="_blank" rel="noopener noreferrer">Open</a>
-              </div>
-              <div class="link-row">
-                <div>
-                  <strong>Different Abilities Sweatshirts</strong>
-                  <span>$30-$40 Square checkout</span>
-                </div>
-                <a class="button" href="https://square.link/u/XzsOlg9N" target="_blank" rel="noopener noreferrer">Open</a>
-              </div>
-              <div class="link-row">
-                <div>
-                  <strong>Gift Card</strong>
-                  <span>Square gift card flow</span>
-                </div>
-                <a class="button" href="https://app.squareup.com/gift/MLZ7ERDANNXQT/order" target="_blank" rel="noopener noreferrer">Open</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="cta-panel">
-            <span class="eyebrow">Still To Connect</span>
-            <h3>Next Square links to create.</h3>
-            <p>The page is ready for the rest of the merch. Once you create these Square links, we can drop them in without redesigning anything.</p>
-            <div class="next-links">
-              <div class="link-row">
-                <div>
-                  <strong>Strength Tshirt</strong>
-                  <span>$25</span>
-                </div>
-              </div>
-              <div class="link-row">
-                <div>
-                  <strong>Strength &amp; Resilience Classic Tshirt</strong>
-                  <span>$25</span>
-                </div>
-              </div>
-              <div class="link-row">
-                <div>
-                  <strong>Different Abilities Unisex Tshirt (Kids)</strong>
-                  <span>$20</span>
-                </div>
-              </div>
-              <div class="link-row">
-                <div>
-                  <strong>Different Abilities Unisex Tshirt</strong>
-                  <span>$25</span>
-                </div>
-              </div>
-              <div class="link-row">
-                <div>
-                  <strong>Different Abilities Tee Variant</strong>
-                  <span>$25</span>
-                </div>
-              </div>
-            </div>
-          </article>
-        </div>
-      </section>
     </main>
   </div>
 </body>
