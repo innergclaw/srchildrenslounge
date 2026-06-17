@@ -861,7 +861,7 @@
 <body>
   <div class="page">
     <header class="site-header">
-      <a class="brand" href="index.html#home">
+      <a class="brand" href="#home">
         <img src="assets/strength-resilience-logo.png" alt="Strength &amp; Resilience Children Lounge logo" />
         <div>
           <strong>SR Sensory Gym</strong>
@@ -877,10 +877,7 @@
         <a href="strength-resilience-memberships.html">Memberships</a>
         <a href="strength-resilience-events.html">Events</a>
         <a href="strength-resilience-waiver.html">Waiver</a>
-        <a href="strength-resilience-shop.html">Shop</a></a>
-            <a href="https://square.link/u/XzsOlg9N" target="_blank" rel="noopener noreferrer">Sweatshirts</a>
-          </div>
-        </details>
+        <a href="strength-resilience-shop.html">Shop</a>
         <a href="https://app.squareup.com/gift/MLZ7ERDANNXQT/order" target="_blank" rel="noopener noreferrer">Gift Card</a>
         <a href="#about">About Us</a>
         <a href="strength-resilience-faq.html">FAQ's</a>
@@ -1143,10 +1140,11 @@
 
           <article class="visit-card">
             <h3>Hours of operation</h3>
-            <p>Visit the gym during weekday afternoons or weekend hours.</p>
+            <p>Visit the gym during weekday afternoons or weekend daytime hours.</p>
             <ul>
-              <li>Tues-Fri: 3:00 pm-7:00 pm</li>
-              <li>Sat &amp; Sun: 11:00 am-4:00 pm</li>
+              <li>Monday: Closed</li>
+              <li>Tues-Fri: 3:00 pm-6:00 pm</li>
+              <li>Sat &amp; Sun: 11:00 am-3:00 pm</li>
               <li>Private parties may affect availability</li>
             </ul>
           </article>
@@ -1172,9 +1170,12 @@
           </p>
         </div>
 
-        <form class="cta-box contact-form" data-sr-intake-form>
+        <form class="cta-box contact-form" data-sr-intake-form data-sr-endpoint="https://formspree.io/f/xlgkzbol">
           <input type="hidden" name="intake_type" value="general_inquiry" />
           <input type="hidden" name="requested_service" value="Website Contact Form" />
+          <input type="hidden" name="form_type" value="general_contact" />
+          <input type="hidden" name="source_site" value="srchildrenslounge" />
+          <input type="hidden" name="source_page" value="home_contact" />
           <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;" aria-hidden="true" />
           <div class="form-field">
             <label for="first-name">First name</label>
@@ -1233,9 +1234,12 @@
       <div class="newsletter-copy">
         <h2 id="newsletter-title">Get the Latest News to Your Inbox</h2>
         <p>Subscribe to our newsletter to receive news, events, and updates from SR Sensory Gym.</p>
-        <form class="newsletter-form" data-sr-intake-form data-sr-newsletter-form>
+        <form class="newsletter-form" data-sr-intake-form data-sr-newsletter-form data-sr-endpoint="https://formspree.io/f/mqeonbba">
           <input type="hidden" name="intake_type" value="newsletter_signup" />
           <input type="hidden" name="requested_service" value="Newsletter Signup" />
+          <input type="hidden" name="form_type" value="newsletter_signup" />
+          <input type="hidden" name="source_site" value="srchildrenslounge" />
+          <input type="hidden" name="source_page" value="newsletter_popup" />
           <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;" aria-hidden="true" />
           <label for="newsletter-email">Enter your email here *</label>
           <input id="newsletter-email" name="email" type="email" placeholder="Email" autocomplete="email" required />

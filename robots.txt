@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.srchildrenslounge.com/sitemap.xml
+Sitemap: https://srchildrenslounge.com/sitemap.xml
