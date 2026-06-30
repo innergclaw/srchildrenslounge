@@ -284,6 +284,52 @@
       font-size: 1.05rem;
     }
 
+    .schedule-alert {
+      display: grid;
+      gap: 16px;
+      margin-top: 18px;
+      padding: clamp(20px, 3vw, 28px);
+      border: 2px solid rgba(245, 61, 45, .42);
+      border-radius: var(--radius-lg);
+      background:
+        radial-gradient(circle at 100% 0%, rgba(245, 61, 45, .1), transparent 220px),
+        #ffffff;
+      box-shadow: 0 18px 38px rgba(31,31,31,.09);
+    }
+
+    .schedule-alert h3 {
+      font-size: clamp(2.1rem, 4vw, 3.4rem);
+    }
+
+    .schedule-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .schedule-list li {
+      display: grid;
+      gap: 5px;
+      padding: 15px;
+      border: 1px solid rgba(31,31,31,.1);
+      border-radius: 18px;
+      background: rgba(255,255,255,.82);
+    }
+
+    .schedule-list strong {
+      font-size: .85rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .schedule-list span {
+      color: var(--muted);
+      line-height: 1.45;
+    }
+
     .calendar-event-link {
       position: absolute;
       left: 57.65%;
@@ -557,6 +603,10 @@
         width: 100%;
       }
 
+      .schedule-list {
+        grid-template-columns: 1fr;
+      }
+
       .event-facts {
         grid-template-columns: 1fr;
       }
@@ -642,6 +692,31 @@
             class="button primary"
             href="#register"
           >Choose event &amp; date</a>
+        </div>
+
+        <div class="schedule-alert" aria-label="July booking updates">
+          <div>
+            <span class="eyebrow">July booking updates</span>
+            <h3>Closed dates and limited booking windows.</h3>
+          </div>
+          <ul class="schedule-list">
+            <li>
+              <strong>July 1, 2, and 4</strong>
+              <span>Blocked off for booking. No open play or event booking availability.</span>
+            </li>
+            <li>
+              <strong>July 24</strong>
+              <span>Pop-up day. Booking is available from 10 AM-2 PM only. Evening booking is blocked.</span>
+            </li>
+            <li>
+              <strong>July 25</strong>
+              <span>Blocked off for booking. No open play or event booking availability.</span>
+            </li>
+            <li>
+              <strong>Before visiting</strong>
+              <span>Please confirm the calendar and checkout availability before heading to the lounge.</span>
+            </li>
+          </ul>
         </div>
       </section>
 
@@ -750,10 +825,8 @@
           <div class="science-dates" aria-label="Available Science Saturdays dates">
             <span>June 20</span>
             <span>June 27</span>
-            <span>July 4</span>
             <span>July 11</span>
             <span>July 18</span>
-            <span>July 25</span>
             <span>August 1</span>
             <span>August 8</span>
             <span>August 15</span>
@@ -768,6 +841,39 @@
               href="#register"
               data-sr-event-choice="science"
             >Choose a Saturday &amp; register</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="featured-event" aria-labelledby="july-pop-up-title">
+        <figure>
+          <img
+            src="assets/strength-resilience/sr-party-room.jpeg"
+            alt="SR Sensory Gym party room setup with decorated tables"
+          />
+        </figure>
+        <div class="featured-event-copy">
+          <span class="eyebrow">Limited booking day</span>
+          <h2 id="july-pop-up-title">July 24 Pop-Up.</h2>
+          <p>
+            SR Sensory Gym will run a special pop-up booking window on July 24. Families can book between 10 AM and 2 PM only.
+          </p>
+          <div class="event-facts">
+            <div class="event-fact">
+              <strong>Date</strong>
+              <span>Friday, July 24, 2026</span>
+            </div>
+            <div class="event-fact">
+              <strong>Booking window</strong>
+              <span>10 AM-2 PM only</span>
+            </div>
+            <div class="event-fact">
+              <strong>Evening</strong>
+              <span>Blocked for booking</span>
+            </div>
+          </div>
+          <div class="hero-actions" style="margin-top: 20px;">
+            <a class="button primary" href="strength-resilience-book-now.html">Book open play</a>
           </div>
         </div>
       </section>

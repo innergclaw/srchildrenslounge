@@ -24,10 +24,8 @@
       dates: [
         ["2026-06-20", "Saturday, June 20"],
         ["2026-06-27", "Saturday, June 27"],
-        ["2026-07-04", "Saturday, July 4"],
         ["2026-07-11", "Saturday, July 11"],
         ["2026-07-18", "Saturday, July 18"],
-        ["2026-07-25", "Saturday, July 25"],
         ["2026-08-01", "Saturday, August 1"],
         ["2026-08-08", "Saturday, August 8"],
         ["2026-08-15", "Saturday, August 15"],
