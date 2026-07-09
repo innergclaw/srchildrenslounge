@@ -36,6 +36,12 @@
       paymentUrl: "https://square.link/u/TMuheSKC",
       dates: [["2026-07-17", "Friday, July 17"]],
     },
+    backToSchool: {
+      label: "Free Back-to-School Community Day",
+      time: "12:00 PM-4:00 PM",
+      paymentUrl: "https://square.link/u/I6grnO8z",
+      dates: [["2026-08-30", "Sunday, August 30"]],
+    },
   };
 
   const eventSelect = form.querySelector("[name='event_name']");
