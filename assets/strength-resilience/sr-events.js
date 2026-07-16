@@ -30,12 +30,6 @@
         ["2026-08-22", "Saturday, August 22"],
       ],
     },
-    glow: {
-      label: "Let's Glow Crazy Kids",
-      time: "5:00 PM-7:00 PM",
-      paymentUrl: "https://square.link/u/TMuheSKC",
-      dates: [["2026-07-17", "Friday, July 17"]],
-    },
     backToSchool: {
       label: "Free Back-to-School Community Day",
       time: "12:00 PM-4:00 PM",
