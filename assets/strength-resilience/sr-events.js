@@ -17,18 +17,11 @@
         ["2026-08-20", "Thursday, August 20"],
       ],
     },
-    science: {
-      label: "Science Saturdays",
-      time: "12:00 PM-1:00 PM",
-      paymentUrl: "https://square.link/u/gW1DNzvZ",
-      dates: [
-        ["2026-07-11", "Saturday, July 11"],
-        ["2026-07-18", "Saturday, July 18"],
-        ["2026-08-01", "Saturday, August 1"],
-        ["2026-08-08", "Saturday, August 8"],
-        ["2026-08-15", "Saturday, August 15"],
-        ["2026-08-22", "Saturday, August 22"],
-      ],
+    toyStory: {
+      label: "Toy Story Movie Day",
+      time: "1:00 PM-3:00 PM",
+      paymentUrl: "https://square.link/u/xNlq9GLo",
+      dates: [["2026-08-16", "Sunday, August 16"]],
     },
     backToSchool: {
       label: "Free Back-to-School Community Day",
