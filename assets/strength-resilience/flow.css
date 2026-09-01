@@ -371,6 +371,7 @@ main > section:not(.hero):hover,
   top: calc(100% + 14px);
   left: 50%;
   display: flex;
+  flex-wrap: nowrap;
   gap: 8px;
   width: min(1000px, calc(100vw - 32px));
   padding: 14px;
@@ -383,6 +384,7 @@ main > section:not(.hero):hover,
   transform: translate(-50%, -14px) scale(.96);
   transform-origin: top center;
   overflow-x: auto;
+  overflow-y: hidden;
   scrollbar-width: thin;
   transition: opacity .22s ease, transform .3s cubic-bezier(.23, 1, .32, 1);
 }
