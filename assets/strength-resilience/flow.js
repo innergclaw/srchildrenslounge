@@ -1,4 +1,52 @@
 (() => {
+  const header = document.querySelector(".site-header");
+  const nav = header?.querySelector(".nav-links");
+
+  if (header && nav) {
+    const navItems = [
+      ["Field Trips", "strength-resilience-book-now.html#field-trips"],
+      ["Drop-off Services", "strength-resilience-services.html#drop-off"]
+    ];
+    navItems.forEach(([label, href]) => {
+      if ([...nav.querySelectorAll("a")].some((link) => link.textContent.trim() === label)) return;
+      const link = document.createElement("a");
+      link.href = href;
+      link.textContent = label;
+      nav.appendChild(link);
+    });
+
+    const toggle = document.createElement("button");
+    toggle.className = "nav-toggle";
+    toggle.type = "button";
+    toggle.setAttribute("aria-expanded", "false");
+    toggle.setAttribute("aria-controls", "primary-navigation");
+    toggle.setAttribute("aria-label", "Open menu");
+    toggle.innerHTML = '<span class="nav-toggle-icon" aria-hidden="true"><span></span><span></span><span></span></span><span class="sr-only">Menu</span>';
+    nav.id = "primary-navigation";
+    header.insertBefore(toggle, nav);
+
+    const closeMenu = () => {
+      nav.classList.remove("is-open");
+      toggle.setAttribute("aria-expanded", "false");
+      toggle.setAttribute("aria-label", "Open menu");
+    };
+
+    toggle.addEventListener("click", () => {
+      const isOpen = toggle.getAttribute("aria-expanded") === "true";
+      toggle.setAttribute("aria-expanded", String(!isOpen));
+      toggle.setAttribute("aria-label", isOpen ? "Open menu" : "Close menu");
+      nav.classList.toggle("is-open", !isOpen);
+    });
+
+    document.addEventListener("click", (event) => {
+      if (!header.contains(event.target)) closeMenu();
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") closeMenu();
+    });
+  }
+
   const mobileShopQuery = window.matchMedia("(max-width: 760px)");
   const shopDetails = document.querySelector(".nav-shop");
   const shopSummary = shopDetails?.querySelector("summary");
