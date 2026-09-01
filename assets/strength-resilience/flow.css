@@ -369,10 +369,10 @@ main > section:not(.hero):hover,
 .site-header .nav-links {
   position: absolute;
   top: calc(100% + 14px);
-  right: 0;
-  display: grid;
+  left: 50%;
+  display: flex;
   gap: 8px;
-  width: min(310px, calc(100vw - 32px));
+  width: min(1000px, calc(100vw - 32px));
   padding: 14px;
   border: 1px solid rgba(25, 200, 106, .28);
   border-radius: 24px;
@@ -380,23 +380,26 @@ main > section:not(.hero):hover,
   box-shadow: 0 28px 68px rgba(31, 31, 31, .2);
   opacity: 0;
   pointer-events: none;
-  transform: translateY(-14px) scale(.96);
-  transform-origin: top right;
+  transform: translate(-50%, -14px) scale(.96);
+  transform-origin: top center;
+  overflow-x: auto;
+  scrollbar-width: thin;
   transition: opacity .22s ease, transform .3s cubic-bezier(.23, 1, .32, 1);
 }
 
 .site-header .nav-links.is-open {
   opacity: 1;
   pointer-events: auto;
-  transform: translateY(0) scale(1);
+  transform: translate(-50%, 0) scale(1);
   animation: srMenuIn .32s cubic-bezier(.23, 1, .32, 1) both;
 }
 
 .site-header .nav-links a {
-  width: 100%;
-  justify-content: flex-start;
+  flex: 0 0 auto;
+  justify-content: center;
   min-height: 44px;
   padding: 0 16px;
+  white-space: nowrap;
 }
 
 @media (prefers-reduced-motion: reduce) {

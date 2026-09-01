@@ -637,13 +637,17 @@
       left: 0;
       width: 100vw;
       height: 100vh;
-      z-index: 100;
+      z-index: 3000;
       display: grid;
       place-items: center;
       padding: 18px;
       opacity: 0;
       visibility: hidden;
       transition: opacity .28s ease, visibility .28s ease;
+    }
+
+    body.sr-newsletter-open {
+      overflow: hidden;
     }
 
     .newsletter-popup.is-visible {
@@ -694,6 +698,12 @@
       cursor: pointer;
       font: 700 2.2rem/1 Arial, sans-serif;
       box-shadow: 0 10px 22px rgba(31,31,31,.08);
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+
+    .newsletter-close:hover {
+      transform: rotate(90deg) scale(1.06);
+      box-shadow: 0 14px 28px rgba(31,31,31,.14);
     }
 
     .newsletter-copy {

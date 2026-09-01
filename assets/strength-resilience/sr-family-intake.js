@@ -102,6 +102,7 @@
     if (!newsletterPopup) return;
     window.clearTimeout(newsletterTimer);
     newsletterPopup.classList.remove("is-visible");
+    document.body.classList.remove("sr-newsletter-open");
     if (remember) {
       try {
         window.sessionStorage.setItem("srNewsletterPopupDismissed", "true");
@@ -112,11 +113,6 @@
     window.setTimeout(() => {
       newsletterPopup.hidden = true;
     }, 300);
-  }
-
-  function positionNewsletterPopup() {
-    if (!newsletterPopup || newsletterPopup.hidden) return;
-    newsletterPopup.style.transform = `translateY(${window.scrollY}px)`;
   }
 
   function initNewsletterPopup() {
@@ -134,9 +130,6 @@
       button.addEventListener("click", () => closeNewsletterPopup(true));
     });
 
-    window.addEventListener("scroll", positionNewsletterPopup, { passive: true });
-    window.addEventListener("resize", positionNewsletterPopup);
-
     document.addEventListener("keydown", (event) => {
       if (event.key === "Escape" && newsletterPopup.classList.contains("is-visible")) {
         closeNewsletterPopup(true);
@@ -145,7 +138,7 @@
 
     newsletterTimer = window.setTimeout(() => {
       newsletterPopup.hidden = false;
-      positionNewsletterPopup();
+      document.body.classList.add("sr-newsletter-open");
       window.requestAnimationFrame(() => {
         newsletterPopup.classList.add("is-visible");
       });
