@@ -369,11 +369,12 @@ main > section:not(.hero):hover,
 .site-header .nav-links {
   position: absolute;
   top: calc(100% + 14px);
-  left: 50%;
+  left: 0;
+  right: 0;
   display: flex;
   flex-wrap: nowrap;
   gap: 8px;
-  width: min(1000px, calc(100vw - 32px));
+  width: 100%;
   padding: 14px;
   border: 1px solid rgba(25, 200, 106, .28);
   border-radius: 24px;
@@ -381,7 +382,7 @@ main > section:not(.hero):hover,
   box-shadow: 0 28px 68px rgba(31, 31, 31, .2);
   opacity: 0;
   pointer-events: none;
-  transform: translate(-50%, -14px) scale(.96);
+  transform: translateY(-14px) scale(.96);
   transform-origin: top center;
   overflow-x: auto;
   overflow-y: hidden;
@@ -392,7 +393,7 @@ main > section:not(.hero):hover,
 .site-header .nav-links.is-open {
   opacity: 1;
   pointer-events: auto;
-  transform: translate(-50%, 0) scale(1);
+  transform: translateY(0) scale(1);
   animation: srMenuIn .32s cubic-bezier(.23, 1, .32, 1) both;
 }
 
