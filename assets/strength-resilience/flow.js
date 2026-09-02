@@ -47,6 +47,27 @@
     });
   }
 
+  const topButton = document.createElement("button");
+  topButton.className = "slide-to-top";
+  topButton.type = "button";
+  topButton.setAttribute("aria-label", "Slide to top");
+  topButton.textContent = "↑";
+  document.body.appendChild(topButton);
+
+  const updateTopButton = () => {
+    topButton.classList.toggle("is-visible", window.scrollY > 420);
+  };
+
+  topButton.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"
+    });
+  });
+
+  window.addEventListener("scroll", updateTopButton, { passive: true });
+  updateTopButton();
+
   const mobileShopQuery = window.matchMedia("(max-width: 760px)");
   const shopDetails = document.querySelector(".nav-shop");
   const shopSummary = shopDetails?.querySelector("summary");
