@@ -455,19 +455,29 @@ main > section:not(.hero):hover,
   left: auto;
   right: auto;
   display: flex;
-  flex-wrap: wrap;
-  width: auto;
-  max-width: none;
-  padding: 0;
-  border: 0;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  width: 100%;
+  max-width: 100%;
+  padding: 12px 2px 5px;
+  border-top: 1px solid rgba(31,31,31,.09);
+  border-right: 0;
+  border-bottom: 0;
+  border-left: 0;
   border-radius: 0;
   background: transparent;
   box-shadow: none;
   opacity: 1;
   pointer-events: auto;
-  overflow: visible;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
   transform: none;
   animation: none;
+}
+
+.site-header .nav-links::-webkit-scrollbar {
+  display: none;
 }
 
 .site-header .nav-links a {
