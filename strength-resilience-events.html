@@ -260,6 +260,41 @@
       background: #ffffff;
     }
 
+    .calendar-coming-soon {
+      display: grid;
+      min-height: 360px;
+      place-items: center;
+      align-content: center;
+      gap: 14px;
+      padding: 48px 24px;
+      text-align: center;
+      background:
+        radial-gradient(circle at 18% 22%, rgba(25,200,106,.18) 0 90px, transparent 92px),
+        radial-gradient(circle at 82% 78%, rgba(255,164,27,.2) 0 120px, transparent 122px),
+        linear-gradient(135deg, #fffaf0, #ffffff 52%, #f2fff7);
+    }
+
+    .calendar-coming-soon span {
+      color: var(--poppy);
+      font-size: .82rem;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .calendar-coming-soon strong {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(3.2rem, 8vw, 6rem);
+      line-height: .9;
+      letter-spacing: -.04em;
+    }
+
+    .calendar-coming-soon p {
+      max-width: 470px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
     .calendar-booking {
       display: flex;
       align-items: center;
@@ -449,6 +484,95 @@
       background: linear-gradient(180deg, #ffffff, rgba(122,91,199,.07));
     }
 
+    .past-events {
+      overflow: hidden;
+      border: 2px solid rgba(31,31,31,.12);
+      border-radius: var(--radius-xl);
+      background: rgba(255,255,255,.86);
+      box-shadow: var(--shadow);
+    }
+
+    .past-events summary {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 24px 28px;
+      cursor: pointer;
+      list-style: none;
+      color: var(--ink);
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 600;
+    }
+
+    .past-events summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .past-events summary::after {
+      content: "+";
+      display: grid;
+      width: 38px;
+      height: 38px;
+      flex: 0 0 auto;
+      place-items: center;
+      border: 1px solid rgba(31,31,31,.16);
+      border-radius: 50%;
+      font-family: Manrope, ui-sans-serif, system-ui, sans-serif;
+      font-size: 1.4rem;
+      line-height: 1;
+    }
+
+    .past-events[open] summary::after {
+      content: "−";
+    }
+
+    .past-events-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      padding: 0 28px 28px;
+    }
+
+    .past-event-card {
+      display: grid;
+      grid-template-columns: minmax(120px, .42fr) minmax(0, 1fr);
+      gap: 18px;
+      align-items: start;
+      padding: 16px;
+      border: 1px solid rgba(31,31,31,.12);
+      border-radius: var(--radius-lg);
+      background: linear-gradient(180deg, #ffffff, rgba(31,31,31,.035));
+    }
+
+    .past-event-card img {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      border-radius: 14px;
+    }
+
+    .past-event-card h3 {
+      margin-top: 8px;
+      font-size: 1.8rem;
+    }
+
+    .past-event-card p {
+      margin-top: 10px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .past-event-card small {
+      display: block;
+      color: var(--muted);
+      font-size: .76rem;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
     .event-card h3 {
       margin-top: 10px;
       font-size: 2.2rem;
@@ -498,6 +622,10 @@
       .event-grid,
       .featured-event,
       .note-band {
+        grid-template-columns: 1fr;
+      }
+
+      .past-events-grid {
         grid-template-columns: 1fr;
       }
 
@@ -561,6 +689,10 @@
         grid-template-columns: 1fr;
       }
 
+      .past-event-card {
+        grid-template-columns: minmax(100px, .35fr) minmax(0, 1fr);
+      }
+
       .science-dates {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
@@ -622,183 +754,50 @@
         </div>
 
         <figure class="calendar-card">
-          <img src="assets/strength-resilience/sr-calendar.png" alt="SR Sensory Gym monthly event calendar and schedule" />
-          <a
-            class="calendar-event-link messy-thursday"
-            href="#register"
-            data-sr-event-choice="messy"
-            aria-label="Choose a Messy Thursdays date and register"
-          >
-            <span>Choose date</span>
-          </a>
+          <div class="calendar-coming-soon" role="img" aria-label="October 2026 event calendar coming soon">
+            <span>October 2026 event calendar</span>
+            <strong>COMING SOON</strong>
+            <p>The October schedule is being prepared. Check back soon for open play, classes, and event dates.</p>
+          </div>
         </figure>
 
         <div class="calendar-booking">
           <p>
-            <strong>Book events for the month</strong>
-            Select an active event and choose the exact available date that works for your family.
+            <strong>October schedule in progress</strong>
+            Contact the team if you have a question before the new calendar is posted.
           </p>
-          <a
-            class="button primary"
-            href="#register"
-          >Choose event &amp; date</a>
+          <a class="button primary" href="mailto:Info@srchildrenslounge.com?subject=SR%20Sensory%20Gym%20October%20Calendar%20Question">Ask a question</a>
         </div>
       </section>
 
-      <section class="sr-intake-panel" id="register">
-        <span class="eyebrow">Event registration</span>
-        <h2>Choose the event and exact date.</h2>
-        <p>
-          Save your family details and preferred date first. After the date is recorded, continue to the matching secure Square checkout to complete payment.
-        </p>
-
-        <form data-sr-intake-form data-sr-payment-form data-sr-event-registration-form data-sr-endpoint="https://formspree.io/f/mwvjyozj">
-          <input type="hidden" name="intake_type" value="event_registration" />
-          <input type="hidden" name="form_type" value="event_registration" />
-          <input type="hidden" name="source_site" value="srchildrenslounge" />
-          <input type="hidden" name="source_page" value="events_registration" />
-          <input type="hidden" name="requested_service" value="" />
-          <input type="hidden" name="preferred_time" value="" />
-          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;" aria-hidden="true" />
-
-          <div class="sr-form-grid">
-            <div class="sr-form-field">
-              <label for="event-name">Event</label>
-              <select id="event-name" name="event_name" required>
-                <option value="">Choose an event</option>
-                <option value="messy">Messy Thursdays</option>
-                <option value="toyStory">Toy Story Movie Day</option>
-              </select>
-            </div>
-            <div class="sr-form-field">
-              <label for="event-date">Available date</label>
-              <select id="event-date" name="preferred_date" required disabled>
-                <option value="">Choose an event first</option>
-              </select>
-            </div>
-            <div class="sr-form-field">
-              <label for="event-first-name">First name</label>
-              <input id="event-first-name" name="first_name" autocomplete="given-name" required />
-            </div>
-            <div class="sr-form-field">
-              <label for="event-last-name">Last name</label>
-              <input id="event-last-name" name="last_name" autocomplete="family-name" required />
-            </div>
-            <div class="sr-form-field">
-              <label for="event-phone">Phone</label>
-              <input id="event-phone" name="phone" type="tel" autocomplete="tel" required />
-            </div>
-            <div class="sr-form-field">
-              <label for="event-email">Email</label>
-              <input id="event-email" name="email" type="email" autocomplete="email" required />
-            </div>
-            <div class="sr-form-field">
-              <label for="event-child-names">Child name(s)</label>
-              <input id="event-child-names" name="child_names" required />
-            </div>
-            <div class="sr-form-field">
-              <label for="event-child-ages">Child age(s)</label>
-              <input id="event-child-ages" name="child_ages" required />
-            </div>
-            <div class="sr-form-field">
-              <label for="event-attendees">Number of children</label>
-              <input id="event-attendees" name="guest_count" type="number" min="1" max="20" value="1" required />
-            </div>
-            <div class="sr-form-field">
-              <label for="event-notes">Notes</label>
-              <input id="event-notes" name="message" placeholder="Sibling pricing, accessibility needs, or questions" />
-            </div>
-            <p class="sr-form-status" data-sr-form-status aria-live="polite"></p>
-            <button class="button primary" type="submit">Save date &amp; continue</button>
-
-            <div class="sr-payment-step" data-sr-payment-step hidden>
-              <strong>Date saved. Complete payment to finish registration.</strong>
-              <span data-sr-payment-summary></span>
-              <p>
-                Square may ask for the date again. Enter the same date you selected above so the payment and registration match.
-              </p>
-              <a class="button primary" data-sr-payment-link href="#" target="_blank" rel="noopener noreferrer">Continue to secure payment</a>
-            </div>
-          </div>
-        </form>
-      </section>
-
-      <section class="featured-event science-event" aria-labelledby="toy-story-movie-day-title">
+      <section class="featured-event" aria-labelledby="halloween-title">
         <figure>
           <img
-            src="assets/strength-resilience/toy-story-movie-day.jpeg"
-            alt="Toy Story Movie Day flyer with date, time, price, and RSVP details"
+            src="assets/strength-resilience/sr-halloween-trick-or-treat-2026.jpg"
+            alt="SR Halloween Trick or Treat flyer for October 31, 2026"
           />
         </figure>
         <div class="featured-event-copy">
-          <span class="eyebrow">August event</span>
-          <h2 id="toy-story-movie-day-title">Toy Story Movie Day.</h2>
-          <p>Family movie day with snacks, cozy setup, and free play.</p>
+          <span class="eyebrow">Featured October event</span>
+          <h2 id="halloween-title">SR Halloween Trick or Treat.</h2>
+          <p>Join SR for trick-or-treating, costumes, music, and festive activities for the whole family.</p>
           <div class="event-facts">
             <div class="event-fact">
               <strong>Date &amp; time</strong>
-              <span>August 16, 2026 | 1 PM-3 PM</span>
-            </div>
-            <div class="event-fact">
-              <strong>Location</strong>
-              <span>319 Easton Rd.</span>
-            </div>
-            <div class="event-fact">
-              <strong>Pricing</strong>
-              <span>Drop-off: $40 | Siblings $30<br />Parent stay: $25 | Siblings $20</span>
-            </div>
-          </div>
-          <p class="booking-note">
-            Drop them off for a parents night out or stay and enjoy the fun with them.
-          </p>
-          <div class="hero-actions" style="margin-top: 20px;">
-            <a
-              class="button primary"
-              href="https://square.link/u/xNlq9GLo"
-              target="_blank"
-              rel="noreferrer"
-            >REGISTER FOR AUGUST 16</a>
-          </div>
-        </div>
-      </section>
-
-      <section class="featured-event" aria-labelledby="back-to-school-title">
-        <figure>
-          <img
-            src="assets/strength-resilience/back-to-school-community-day.jpg"
-            alt="Free Back-to-School Community Day flyer for SR Children's Lounge on August 30"
-          />
-        </figure>
-        <div class="featured-event-copy">
-          <span class="eyebrow">Featured August event</span>
-          <h2 id="back-to-school-title">Free Back-to-School Community Day.</h2>
-          <p>
-            SR Children's Lounge is collecting school supplies now through August 30, then hosting a free community day with backpack and supply giveaways, family fun, open play, refreshments, snacks, raffle, and community resources.
-          </p>
-          <div class="event-facts">
-            <div class="event-fact">
-              <strong>Date &amp; time</strong>
-              <span>August 30, 2026 | 12 PM-4 PM</span>
+              <span>October 31, 2026 | 12 PM-4 PM</span>
             </div>
             <div class="event-fact">
               <strong>Location</strong>
               <span>319 Easton Rd., Willow Grove, PA</span>
             </div>
             <div class="event-fact">
-              <strong>Donation items</strong>
-              <span>Pencils, notebooks, crayons, folders, scissors, hand sanitizer, backpacks, rulers, and supplies</span>
+              <strong>Price</strong>
+              <span>$15</span>
             </div>
           </div>
-          <p class="booking-note">
-            Families can register through Square and partners can contact info@srchildrenslounge.com to support the supply drive.
-          </p>
+          <p class="booking-note">Email the team to ask questions and confirm event details.</p>
           <div class="hero-actions" style="margin-top: 20px;">
-            <a
-              class="button primary"
-              href="https://square.link/u/I6grnO8z"
-              target="_blank"
-              rel="noreferrer"
-            >REGISTER FOR AUGUST 30</a>
+            <a class="button primary" href="mailto:Info@srchildrenslounge.com?subject=SR%20Halloween%20Trick%20or%20Treat%20Inquiry">Email to inquire</a>
           </div>
         </div>
       </section>
@@ -839,6 +838,34 @@
         </div>
       </section>
 
+      <details class="past-events">
+        <summary>Past Events</summary>
+        <div class="past-events-grid">
+          <article class="past-event-card">
+            <img
+              src="assets/strength-resilience/toy-story-movie-day.jpeg"
+              alt="Toy Story Movie Day flyer"
+            />
+            <div>
+              <small>August 16, 2026</small>
+              <h3>Toy Story Movie Day.</h3>
+              <p>Family movie day with snacks, a cozy setup, and free play from 1 PM to 3 PM.</p>
+            </div>
+          </article>
+          <article class="past-event-card">
+            <img
+              src="assets/strength-resilience/back-to-school-community-day.jpg"
+              alt="Back-to-School Community Day flyer"
+            />
+            <div>
+              <small>August 30, 2026</small>
+              <h3>Back-to-School Community Day.</h3>
+              <p>Free community day with school-supply giveaways, family fun, open play, refreshments, and resources.</p>
+            </div>
+          </article>
+        </div>
+      </details>
+
       <section class="event-grid" aria-label="Event calendar details">
         <a class="event-card event-purchase-card" href="#calendar" aria-label="Jump to the SR event calendar">
           <span class="event-label">Monthly calendar</span>
@@ -851,27 +878,11 @@
           <h3>Structured family activities.</h3>
           <p>Weekend movie days, toddler time, and class-style activities may appear on the monthly schedule.</p>
         </article>
-        <a
-          class="event-card event-purchase-card"
-          href="#register"
-          data-sr-event-choice="backToSchool"
-          aria-label="Choose the Free Back-to-School Community Day and register"
-        >
-          <span class="event-label">August 30</span>
-          <h3>Back-to-School Community Day.</h3>
-          <p>Free community day with backpack and supply giveaways, family fun, open play, refreshments, raffle, and resources.</p>
-          <strong>Register now →</strong>
-        </a>
-        <a
-          class="event-card event-purchase-card"
-          href="#register"
-          data-sr-event-choice="messy"
-          aria-label="Choose a Messy Thursdays date and register"
-        >
-          <span class="event-label">Thursday special</span>
-          <h3>Messy Thursdays.</h3>
-          <p>Available Thursdays from 5 PM to 6:30 PM. Enjoy messy play activities and open gym access for $25.</p>
-          <strong>Purchase admission →</strong>
+        <a class="event-card event-purchase-card" href="mailto:Info@srchildrenslounge.com?subject=SR%20Halloween%20Trick%20or%20Treat%20Inquiry">
+          <span class="event-label">October 31</span>
+          <h3>Halloween Trick or Treat.</h3>
+          <p>Trick-or-treating, costumes, music, and festive activities from 12 PM to 4 PM. Admission is $15.</p>
+          <strong>Email to inquire →</strong>
         </a>
       </section>
 
@@ -893,7 +904,6 @@
     </main>
   </div>
   <script src="assets/strength-resilience/flow.js"></script>
-  <script src="assets/strength-resilience/sr-events.js"></script>
   <script src="assets/strength-resilience/sr-family-intake.js"></script>
 </body>
 </html>
