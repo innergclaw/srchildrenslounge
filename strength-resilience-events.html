@@ -1,3 +1,80 @@
-        <figure class="calendar-card">
-          <img src="https://cdn.phototourl.com/member/2026-09-23-8c7899ea-3481-4fdd-bb0d-581e8a9fdb74.jpg" alt="SR Sensory Gym October 2026 event calendar and schedule" />
-        </figure>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Events | SR Sensory Gym</title>
+  <meta name="description" content="View the SR Sensory Gym event calendar for open play, classes, special events, and family activities." />
+  <link rel="stylesheet" href="assets/strength-resilience/flow.css" />
+  <style>
+    :root { --ink:#1f1f1f; --muted:rgba(31,31,31,.68); --green:#19c86a; --orange:#ffa41b; --line:rgba(31,31,31,.16); --shadow:0 18px 50px rgba(31,31,31,.1); }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; color:var(--ink); font-family:Manrope,Arial,sans-serif; background:linear-gradient(180deg,#fff 0%,rgba(255,164,27,.06) 100%); }
+    a { color:inherit; text-decoration:none; }
+    img { display:block; max-width:100%; }
+    h1,h2,h3,p { margin:0; }
+    h1,h2,h3 { font-family:Georgia,serif; line-height:.98; }
+    .page { width:min(1180px,calc(100% - 32px)); margin:auto; padding:20px 0 56px; }
+    .site-header,.panel,.calendar-section,.event-card,.note-band { border:2px solid var(--line); border-radius:28px; background:#fff; box-shadow:var(--shadow); }
+    .site-header { display:grid; justify-items:center; gap:12px; padding:16px 18px; position:sticky; top:16px; z-index:10; }
+    .brand { display:flex; align-items:center; gap:12px; text-align:center; }
+    .brand img { width:70px; height:70px; object-fit:contain; }
+    .brand strong { display:block; font-size:1.12rem; }
+    .brand span,.eyebrow,.event-label { color:var(--muted); font-size:.76rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; }
+    .nav-links { display:flex; flex-wrap:wrap; justify-content:center; gap:8px; width:100%; padding-top:12px; border-top:1px solid rgba(31,31,31,.09); }
+    .nav-links a,.button { display:inline-flex; align-items:center; justify-content:center; min-height:40px; padding:0 14px; border-radius:999px; font-size:.74rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase; }
+    .nav-links a { border:1px solid rgba(31,31,31,.08); }
+    .nav-links a[aria-current="page"],.button.primary { color:#fff; border-color:transparent; background:linear-gradient(135deg,var(--green),rgba(25,200,106,.78)); }
+    .hero { display:grid; grid-template-columns:.95fr 1.05fr; gap:28px; margin-top:28px; }
+    .hero-copy { display:grid; align-content:center; gap:18px; padding:clamp(28px,4vw,44px); border-color:rgba(255,164,27,.55); }
+    .hero h1 { font-size:clamp(3.8rem,9vw,8rem); }
+    .hero p,.note-band p { max-width:620px; color:var(--muted); font-size:1.04rem; line-height:1.75; }
+    .hero-photo { overflow:hidden; min-height:520px; }
+    .hero-photo img { width:100%; height:100%; min-height:520px; object-fit:cover; }
+    .hero-actions { display:flex; flex-wrap:wrap; gap:12px; }
+    .button { min-height:48px; padding:0 18px; box-shadow:0 12px 28px rgba(31,31,31,.1); }
+    .button.secondary { background:#fff; border:1px solid rgba(31,31,31,.12); }
+    section { margin-top:28px; scroll-margin-top:132px; }
+    .calendar-section { display:grid; gap:18px; padding:clamp(24px,3.2vw,34px); border-color:rgba(255,164,27,.58); }
+    .section-head h2 { font-size:clamp(2.3rem,4.2vw,4rem); }
+    .calendar-card { margin:0; overflow:hidden; border:2px solid rgba(255,164,27,.38); border-radius:24px; background:#fff; box-shadow:0 18px 38px rgba(31,31,31,.09); }
+    .calendar-card img { width:100%; height:auto; }
+    .calendar-booking { display:flex; align-items:center; justify-content:space-between; gap:18px; padding:20px; border:2px solid rgba(25,200,106,.28); border-radius:24px; background:rgba(25,200,106,.08); }
+    .calendar-booking p { color:var(--muted); line-height:1.6; }
+    .calendar-booking strong { display:block; color:var(--ink); }
+    .featured-event { display:grid; grid-template-columns:minmax(280px,.9fr) minmax(0,1.1fr); gap:clamp(24px,4vw,48px); align-items:center; padding:clamp(24px,4vw,42px) 0; border-top:2px solid rgba(25,200,106,.3); border-bottom:2px solid rgba(255,164,27,.35); }
+    .featured-event figure { margin:0; overflow:hidden; border:2px solid rgba(31,31,31,.12); border-radius:24px; background:#fff; box-shadow:var(--shadow); }
+    .featured-event img { width:100%; height:auto; }
+    .featured-event-copy > p { margin-top:16px; color:var(--muted); line-height:1.75; }
+    .event-facts { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin:22px 0; }
+    .event-fact { padding:14px 16px; border-left:4px solid var(--green); background:rgba(25,200,106,.07); }
+    .event-fact strong { display:block; margin-bottom:3px; font-size:.76rem; letter-spacing:.08em; text-transform:uppercase; }
+    .event-fact span { color:var(--muted); font-weight:700; }
+    .event-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; margin-top:28px; }
+    .event-card { padding:26px; }
+    .event-card h3 { margin-top:10px; font-size:2.2rem; }
+    .event-card p { margin-top:12px; color:var(--muted); line-height:1.7; }
+    .note-band { display:grid; grid-template-columns:.88fr 1.12fr; gap:18px; padding:30px; }
+    @media (max-width:980px) { .hero,.featured-event,.note-band,.event-grid { grid-template-columns:1fr; } .hero-photo img { min-height:420px; } }
+    @media (max-width:760px) { .nav-links { justify-content:flex-start; flex-wrap:nowrap; overflow-x:auto; } .calendar-booking { align-items:stretch; flex-direction:column; } .calendar-booking .button { width:100%; } .event-facts { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="site-header">
+      <a class="brand" href="index.html#home"><img src="assets/strength-resilience-logo.png" alt="Strength &amp; Resilience Children Lounge logo" /><span><strong>SR Sensory Gym</strong><br />Strength and Resilience Nonprofit Inc.</span></a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="index.html#home">Home</a><a href="strength-resilience-book-now.html">Book Now</a><a href="strength-resilience-book-a-party.html">Book a Party</a><a href="strength-resilience-services.html">Services</a><a href="strength-resilience-memberships.html">Memberships</a><a href="strength-resilience-events.html" aria-current="page">Events</a><a href="strength-resilience-waiver.html">Waiver</a><a href="strength-resilience-shop.html">Shop</a><a href="https://app.squareup.com/gift/MLZ7ERDANNXQT/order" target="_blank" rel="noopener noreferrer">Gift Card</a><a href="index.html#about">About Us</a><a href="strength-resilience-faq.html">FAQ's</a>
+      </nav>
+    </header>
+    <main>
+      <section class="hero" id="home"><article class="panel hero-copy"><span class="eyebrow">Events</span><h1>Plan around what is happening next.</h1><p>Use the SR Sensory Gym event calendar to check open play, classes, special events, and schedule updates before heading to the lounge.</p><div class="hero-actions"><a class="button primary" href="#calendar">View calendar</a><a class="button secondary" href="mailto:Info@srchildrenslounge.com?subject=SR%20Sensory%20Gym%20Event%20Question">Ask a question</a></div></article><article class="panel hero-photo"><img src="assets/strength-resilience/sr-learning-corner.jpeg" alt="SR Sensory Gym learning and activity corner" /></article></section>
+      <section class="calendar-section" id="calendar"><div class="section-head"><div><span class="eyebrow">Event calendar</span><h2>Check the current schedule.</h2></div></div><figure class="calendar-card"><img src="assets/strength-resilience/sr-calendar-october-2026-replacement.svg" alt="SR Sensory Gym October 2026 event calendar and schedule" /></figure><div class="calendar-booking"><p><strong>October schedule</strong>Contact the team if you have a question about a date or event.</p><a class="button primary" href="mailto:Info@srchildrenslounge.com?subject=SR%20Sensory%20Gym%20October%20Calendar%20Question">Ask a question</a></div></section>
+      <section class="featured-event" aria-labelledby="halloween-title"><figure><img src="assets/strength-resilience/sr-halloween-trick-or-treat-2026.jpg" alt="SR Halloween Trick or Treat flyer for October 31, 2026" /></figure><div class="featured-event-copy"><span class="eyebrow">Featured October event</span><h2 id="halloween-title">SR Halloween Trick or Treat.</h2><p>Join SR for trick-or-treating, costumes, music, and festive activities for the whole family.</p><div class="event-facts"><div class="event-fact"><strong>Date &amp; time</strong><span>October 31, 2026 | 12 PM-4 PM</span></div><div class="event-fact"><strong>Location</strong><span>319 Easton Rd., Willow Grove, PA</span></div><div class="event-fact"><strong>Price</strong><span>$15</span></div></div><a class="button primary" href="https://buy.stripe.com/eVq9AV2JV8Cl3T0dCjao81L" target="_blank" rel="noopener noreferrer">Buy Halloween tickets</a></div></section>
+      <section class="event-grid" aria-label="Event calendar details"><a class="event-card" href="#calendar"><span class="event-label">Monthly calendar</span><h3>Check the current schedule.</h3><p>See open play, classes, special events, and availability updates in the monthly calendar.</p></a><article class="event-card"><span class="event-label">Classes</span><h3>Structured family activities.</h3><p>Weekend movie days, toddler time, and class-style activities may appear on the monthly schedule.</p></article><a class="event-card" href="https://buy.stripe.com/eVq9AV2JV8Cl3T0dCjao81L" target="_blank" rel="noopener noreferrer"><span class="event-label">October 31</span><h3>Halloween Trick or Treat.</h3><p>Trick-or-treating, costumes, music, and festive activities from 12 PM to 4 PM.</p></a></section>
+    </main>
+  </div>
+  <script src="assets/strength-resilience/flow.js"></script><script src="assets/strength-resilience/sr-family-intake.js"></script>
+</body>
+</html>
