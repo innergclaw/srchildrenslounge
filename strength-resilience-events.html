@@ -284,57 +284,6 @@
       font-size: 1.05rem;
     }
 
-    .calendar-event-link {
-      position: absolute;
-      left: 57.65%;
-      top: 36.9%;
-      width: 9.45%;
-      height: 13%;
-      display: flex;
-      align-items: flex-end;
-      justify-content: flex-end;
-      padding: 7px;
-      border: 3px solid transparent;
-      border-radius: 18px;
-      transition: border-color .18s ease, box-shadow .18s ease, transform .18s ease;
-    }
-
-    .calendar-event-link.messy-thursday {
-      left: 46.85%;
-      top: 52.7%;
-    }
-
-    .calendar-event-link.messy-thursday span {
-      background: #7a5bc7;
-    }
-
-    .calendar-event-link.messy-thursday:hover,
-    .calendar-event-link.messy-thursday:focus-visible {
-      border-color: #7a5bc7;
-      box-shadow: 0 0 0 5px rgba(122,91,199,.18);
-    }
-
-    .calendar-event-link span {
-      padding: 5px 8px;
-      border-radius: 999px;
-      color: #ffffff;
-      background: var(--poppy);
-      box-shadow: 0 6px 16px rgba(31,31,31,.2);
-      font-size: clamp(.52rem, .78vw, .72rem);
-      font-weight: 800;
-      letter-spacing: .04em;
-      line-height: 1;
-      text-transform: uppercase;
-    }
-
-    .calendar-event-link:hover,
-    .calendar-event-link:focus-visible {
-      border-color: var(--poppy);
-      box-shadow: 0 0 0 5px rgba(245,61,45,.18);
-      transform: scale(1.025);
-      outline: none;
-    }
-
     .featured-event {
       display: grid;
       grid-template-columns: minmax(280px, .9fr) minmax(0, 1.1fr);
@@ -393,29 +342,6 @@
     .event-fact span {
       color: var(--muted);
       font-weight: 700;
-    }
-
-    .science-event {
-      border-top-color: rgba(0, 148, 255, .35);
-      border-bottom-color: rgba(25, 200, 106, .35);
-    }
-
-    .science-dates {
-      display: grid;
-      grid-template-columns: repeat(5, minmax(0, 1fr));
-      gap: 8px;
-      margin: 22px 0;
-    }
-
-    .science-dates span {
-      padding: 10px 8px;
-      border: 1px solid rgba(0, 148, 255, .24);
-      border-radius: 8px;
-      color: #0b567f;
-      background: rgba(0, 148, 255, .08);
-      font-size: .78rem;
-      font-weight: 800;
-      text-align: center;
     }
 
     .booking-note {
@@ -657,10 +583,6 @@
       .past-event-card {
         grid-template-columns: minmax(100px, .35fr) minmax(0, 1fr);
       }
-
-      .science-dates {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
     }
   </style>
   <link rel="stylesheet" href="assets/strength-resilience/flow.css" />
@@ -733,10 +655,7 @@
 
       <section class="featured-event" aria-labelledby="halloween-title">
         <figure>
-          <img
-            src="assets/strength-resilience/sr-halloween-trick-or-treat-2026.jpg"
-            alt="SR Halloween Trick or Treat flyer for October 31, 2026"
-          />
+          <img src="assets/strength-resilience/sr-halloween-trick-or-treat-2026.jpg" alt="SR Halloween Trick or Treat flyer for October 31, 2026" />
         </figure>
         <div class="featured-event-copy">
           <span class="eyebrow">Featured October event</span>
@@ -758,17 +677,14 @@
           </div>
           <p class="booking-note">Reserve tickets through the secure Stripe checkout.</p>
           <div class="hero-actions" style="margin-top: 20px;">
-            <a class="button primary" href="https://square.link/u/ywXj0XRm" target="_blank" rel="noopener noreferrer">Buy Halloween tickets</a>
+            <a class="button primary" href="https://buy.stripe.com/eVq9AV2JV8Cl3T0dCjao81L" target="_blank" rel="noopener noreferrer">Buy Halloween tickets</a>
           </div>
         </div>
       </section>
 
       <section class="featured-event" aria-labelledby="mommy-meetup-title">
         <figure>
-          <img
-            src="assets/strength-resilience/mommy-meetup-play-dates.png"
-            alt="Mommy Meetup Play Dates flyer for Strength and Resilience"
-          />
+          <img src="assets/strength-resilience/mommy-meetup-play-dates.png" alt="Mommy Meetup Play Dates flyer for Strength and Resilience" />
         </figure>
         <div class="featured-event-copy">
           <span class="eyebrow">Coming soon</span>
@@ -803,10 +719,7 @@
         <summary>Past Events</summary>
         <div class="past-events-grid">
           <article class="past-event-card">
-            <img
-              src="assets/strength-resilience/toy-story-movie-day.jpeg"
-              alt="Toy Story Movie Day flyer"
-            />
+            <img src="assets/strength-resilience/toy-story-movie-day.jpeg" alt="Toy Story Movie Day flyer" />
             <div>
               <small>August 16, 2026</small>
               <h3>Toy Story Movie Day.</h3>
@@ -814,10 +727,7 @@
             </div>
           </article>
           <article class="past-event-card">
-            <img
-              src="assets/strength-resilience/back-to-school-community-day.jpg"
-              alt="Back-to-School Community Day flyer"
-            />
+            <img src="assets/strength-resilience/back-to-school-community-day.jpg" alt="Back-to-School Community Day flyer" />
             <div>
               <small>August 30, 2026</small>
               <h3>Back-to-School Community Day.</h3>
@@ -839,7 +749,7 @@
           <h3>Structured family activities.</h3>
           <p>Weekend movie days, toddler time, and class-style activities may appear on the monthly schedule.</p>
         </article>
-        <a class="event-card event-purchase-card" href="https://square.link/u/ywXj0XRm" target="_blank" rel="noopener noreferrer">
+        <a class="event-card event-purchase-card" href="https://buy.stripe.com/eVq9AV2JV8Cl3T0dCjao81L" target="_blank" rel="noopener noreferrer">
           <span class="event-label">October 31</span>
           <h3>Halloween Trick or Treat.</h3>
           <p>Trick-or-treating, costumes, music, and festive activities from 12 PM to 4 PM. Admission is $15.</p>
