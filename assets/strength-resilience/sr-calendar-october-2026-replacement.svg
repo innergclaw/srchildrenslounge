@@ -1,264 +1,254 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1400" height="980" viewBox="0 0 1400 980" role="img" aria-labelledby="title desc">
   <title id="title">October 2026 calendar</title>
-  <desc id="desc">A colorful October 2026 event calendar for SR Sensory Gym with open play, class, and special event schedule.</desc>
+  <desc id="desc">A colorful October 2026 event calendar for SR Sensory Gym with open play, classes, and special event schedule.</desc>
   <defs>
     <style>
       .bg { fill: #efeae3; }
-      .ink { fill: #2d2d2d; }
-      .muted { fill: #5a5a5a; }
-      .soft { fill: #d8e3e6; }
-      .soft2 { fill: #e7dff4; }
-      .soft3 { fill: #f3dfb4; }
-      .red { fill: #f05d55; }
-      .yellow { fill: #f4d969; }
-      .orange { fill: #f39a4d; }
-      .purple { fill: #d7c5ea; }
-      .sand { fill: #f0d8a8; }
-      .light { fill: #edf0f1; }
-      .rule { fill: #d7d0c9; }
-      .shadow { fill: rgba(0,0,0,0.03); }
-      .tiny { font: 700 16px 'Arial', sans-serif; letter-spacing: 0.18em; text-transform: uppercase; }
-      .month { font: 800 88px 'Arial', sans-serif; }
-      .day { font: 700 34px 'Arial', sans-serif; }
+      .ink { fill: #2e2e2d; }
+      .muted { fill: #5d5c5b; }
+      .soft { fill: #d7e3e6; }
+      .soft-purple { fill: #d8cce8; }
+      .soft-yellow { fill: #f2da9a; }
+      .red { fill: #ee5e53; }
+      .orange { fill: #ef8f4b; }
+      .light { fill: #f3f2f1; }
+      .panel { fill: #f2f0ee; }
+      .week { font: 700 18px 'Arial', sans-serif; letter-spacing: 0.18em; text-transform: uppercase; }
+      .month { font: 900 88px 'Arial', sans-serif; letter-spacing: -4px; }
+      .date { font: 700 34px 'Arial', sans-serif; }
       .cell-head { font: 800 18px 'Arial', sans-serif; letter-spacing: 0.08em; }
-      .event { font: 800 16px 'Arial', sans-serif; }
-      .event-small { font: 800 14px 'Arial', sans-serif; }
+      .cell-sub { font: 700 18px 'Arial', sans-serif; }
       .notes { font: 700 20px 'Arial', sans-serif; }
-      .icons { font: 700 22px 'Arial', sans-serif; }
       .legend { font: 700 21px 'Arial', sans-serif; letter-spacing: 0.12em; }
-      .label { font: 700 18px 'Arial', sans-serif; }
+      .tiny { font: 700 16px 'Arial', sans-serif; }
+      .bullet { fill: #2e2e2d; }
     </style>
   </defs>
 
   <rect class="bg" width="1400" height="980"/>
 
-  <g transform="translate(40,25)">
-    <text x="0" y="104" class="month ink">OCTOBER 2026</text>
+  <g transform="translate(30,22)">
+    <text x="0" y="98" class="month ink">OCTOBER 2026</text>
 
-    <g transform="translate(0,170)">
-      <g>
-        <text x="55" y="0" class="tiny muted">SUN</text>
-        <text x="250" y="0" class="tiny muted">MON</text>
-        <text x="445" y="0" class="tiny muted">TUE</text>
-        <text x="640" y="0" class="tiny muted">WED</text>
-        <text x="835" y="0" class="tiny muted">THU</text>
-        <text x="1030" y="0" class="tiny muted">FRI</text>
-        <text x="1225" y="0" class="tiny muted">SAT</text>
-      </g>
+    <g transform="translate(0,165)">
+      <text x="42" y="0" class="week muted">SUN</text>
+      <text x="192" y="0" class="week muted">MON</text>
+      <text x="342" y="0" class="week muted">TUE</text>
+      <text x="492" y="0" class="week muted">WED</text>
+      <text x="642" y="0" class="week muted">THU</text>
+      <text x="792" y="0" class="week muted">FRI</text>
+      <text x="942" y="0" class="week muted">SAT</text>
 
-      <g transform="translate(0,48)">
-        <rect x="0" y="0" width="170" height="125" rx="12" class="light"/>
-        <rect x="190" y="0" width="170" height="125" rx="12" class="light"/>
-        <rect x="380" y="0" width="170" height="125" rx="12" class="light"/>
-        <rect x="570" y="0" width="170" height="125" rx="12" class="light"/>
-        <rect x="760" y="0" width="170" height="125" rx="12" class="light"/>
-        <rect x="950" y="0" width="170" height="125" rx="12" class="light"/>
-        <rect x="1140" y="0" width="170" height="125" rx="12" class="light"/>
+      <g transform="translate(0,38)">
+        <rect x="0" y="0" width="150" height="120" rx="10" class="light"/>
+        <rect x="150" y="0" width="150" height="120" rx="10" class="light"/>
+        <rect x="300" y="0" width="150" height="120" rx="10" class="light"/>
+        <rect x="450" y="0" width="150" height="120" rx="10" class="light"/>
+        <rect x="600" y="0" width="150" height="120" rx="10" class="soft"/>
+        <rect x="750" y="0" width="150" height="120" rx="10" class="soft"/>
+        <rect x="900" y="0" width="150" height="120" rx="10" class="red"/>
 
-        <rect x="190" y="144" width="170" height="125" rx="12" class="soft"/>
-        <rect x="380" y="144" width="170" height="125" rx="12" class="soft"/>
-        <rect x="570" y="144" width="170" height="125" rx="12" class="soft"/>
-        <rect x="760" y="144" width="170" height="125" rx="12" class="soft"/>
-        <rect x="950" y="144" width="170" height="125" rx="12" class="soft"/>
-        <rect x="1140" y="144" width="170" height="125" rx="12" class="soft"/>
-        <rect x="0" y="144" width="170" height="125" rx="12" class="soft"/>
+        <rect x="0" y="120" width="150" height="120" rx="10" class="soft"/>
+        <rect x="150" y="120" width="150" height="120" rx="10" class="red"/>
+        <rect x="300" y="120" width="150" height="120" rx="10" class="soft"/>
+        <rect x="450" y="120" width="150" height="120" rx="10" class="soft"/>
+        <rect x="600" y="120" width="150" height="120" rx="10" class="soft"/>
+        <rect x="750" y="120" width="150" height="120" rx="10" class="soft-purple"/>
+        <rect x="900" y="120" width="150" height="120" rx="10" class="soft"/>
 
-        <rect x="0" y="288" width="170" height="125" rx="12" class="soft"/>
-        <rect x="190" y="288" width="170" height="125" rx="12" class="red"/>
-        <rect x="380" y="288" width="170" height="125" rx="12" class="soft"/>
-        <rect x="570" y="288" width="170" height="125" rx="12" class="soft"/>
-        <rect x="760" y="288" width="170" height="125" rx="12" class="soft"/>
-        <rect x="950" y="288" width="170" height="125" rx="12" class="soft"/>
-        <rect x="1140" y="288" width="170" height="125" rx="12" class="soft"/>
+        <rect x="0" y="240" width="150" height="120" rx="10" class="soft"/>
+        <rect x="150" y="240" width="150" height="120" rx="10" class="red"/>
+        <rect x="300" y="240" width="150" height="120" rx="10" class="soft"/>
+        <rect x="450" y="240" width="150" height="120" rx="10" class="red"/>
+        <rect x="600" y="240" width="150" height="120" rx="10" class="red"/>
+        <rect x="750" y="240" width="150" height="120" rx="10" class="red"/>
+        <rect x="900" y="240" width="150" height="120" rx="10" class="soft"/>
 
-        <rect x="0" y="432" width="170" height="125" rx="12" class="soft"/>
-        <rect x="190" y="432" width="170" height="125" rx="12" class="soft"/>
-        <rect x="380" y="432" width="170" height="125" rx="12" class="soft"/>
-        <rect x="570" y="432" width="170" height="125" rx="12" class="soft"/>
-        <rect x="760" y="432" width="170" height="125" rx="12" class="soft"/>
-        <rect x="950" y="432" width="170" height="125" rx="12" class="soft"/>
-        <rect x="1140" y="432" width="170" height="125" rx="12" class="soft"/>
+        <rect x="0" y="360" width="150" height="120" rx="10" class="soft"/>
+        <rect x="150" y="360" width="150" height="120" rx="10" class="red"/>
+        <rect x="300" y="360" width="150" height="120" rx="10" class="soft-yellow"/>
+        <rect x="450" y="360" width="150" height="120" rx="10" class="red"/>
+        <rect x="600" y="360" width="150" height="120" rx="10" class="red"/>
+        <rect x="750" y="360" width="150" height="120" rx="10" class="soft"/>
+        <rect x="900" y="360" width="150" height="120" rx="10" class="soft"/>
 
-        <rect x="0" y="576" width="170" height="125" rx="12" class="soft"/>
-        <rect x="190" y="576" width="170" height="125" rx="12" class="red"/>
-        <rect x="380" y="576" width="170" height="125" rx="12" class="soft"/>
-        <rect x="570" y="576" width="170" height="125" rx="12" class="soft"/>
-        <rect x="760" y="576" width="170" height="125" rx="12" class="soft"/>
-        <rect x="950" y="576" width="170" height="125" rx="12" class="soft"/>
-        <rect x="1140" y="576" width="170" height="125" rx="12" class="soft"/>
+        <rect x="0" y="480" width="150" height="120" rx="10" class="soft"/>
+        <rect x="150" y="480" width="150" height="120" rx="10" class="red"/>
+        <rect x="300" y="480" width="150" height="120" rx="10" class="soft"/>
+        <rect x="450" y="480" width="150" height="120" rx="10" class="soft"/>
+        <rect x="600" y="480" width="150" height="120" rx="10" class="soft"/>
+        <rect x="750" y="480" width="150" height="120" rx="10" class="soft"/>
+        <rect x="900" y="480" width="150" height="120" rx="10" class="orange"/>
 
-        <rect x="0" y="720" width="170" height="125" rx="12" class="soft"/>
-        <rect x="190" y="720" width="170" height="125" rx="12" class="soft"/>
-        <rect x="380" y="720" width="170" height="125" rx="12" class="soft"/>
-        <rect x="570" y="720" width="170" height="125" rx="12" class="soft"/>
-        <rect x="760" y="720" width="170" height="125" rx="12" class="soft"/>
-        <rect x="950" y="720" width="170" height="125" rx="12" class="soft"/>
-        <rect x="1140" y="720" width="170" height="125" rx="12" class="orange"/>
+        <text x="24" y="54" class="date ink">01</text>
+        <text x="174" y="54" class="date ink">02</text>
+        <text x="324" y="54" class="date ink">03</text>
+        <text x="24" y="174" class="date ink">04</text>
+        <text x="174" y="174" class="date ink">05</text>
+        <text x="324" y="174" class="date ink">06</text>
+        <text x="474" y="174" class="date ink">07</text>
+        <text x="624" y="174" class="date ink">08</text>
+        <text x="774" y="174" class="date ink">09</text>
+        <text x="924" y="174" class="date ink">10</text>
 
-        <text x="45" y="90" class="day ink">04</text>
-        <text x="225" y="90" class="day ink">05</text>
-        <text x="415" y="90" class="day ink">06</text>
-        <text x="605" y="90" class="day ink">07</text>
-        <text x="795" y="90" class="day ink">08</text>
-        <text x="985" y="90" class="day ink">09</text>
-        <text x="1175" y="90" class="day ink">10</text>
+        <text x="24" y="294" class="date ink">11</text>
+        <text x="174" y="294" class="date ink">12</text>
+        <text x="324" y="294" class="date ink">13</text>
+        <text x="474" y="294" class="date ink">14</text>
+        <text x="624" y="294" class="date ink">15</text>
+        <text x="774" y="294" class="date ink">16</text>
+        <text x="924" y="294" class="date ink">17</text>
 
-        <text x="45" y="234" class="day ink">11</text>
-        <text x="225" y="234" class="day ink">12</text>
-        <text x="415" y="234" class="day ink">13</text>
-        <text x="605" y="234" class="day ink">14</text>
-        <text x="795" y="234" class="day ink">15</text>
-        <text x="985" y="234" class="day ink">16</text>
-        <text x="1175" y="234" class="day ink">17</text>
+        <text x="24" y="414" class="date ink">18</text>
+        <text x="174" y="414" class="date ink">19</text>
+        <text x="324" y="414" class="date ink">20</text>
+        <text x="474" y="414" class="date ink">21</text>
+        <text x="624" y="414" class="date ink">22</text>
+        <text x="774" y="414" class="date ink">23</text>
+        <text x="924" y="414" class="date ink">24</text>
 
-        <text x="45" y="378" class="day ink">18</text>
-        <text x="225" y="378" class="day ink">19</text>
-        <text x="415" y="378" class="day ink">20</text>
-        <text x="605" y="378" class="day ink">21</text>
-        <text x="795" y="378" class="day ink">22</text>
-        <text x="985" y="378" class="day ink">23</text>
-        <text x="1175" y="378" class="day ink">24</text>
+        <text x="24" y="534" class="date ink">25</text>
+        <text x="174" y="534" class="date ink">26</text>
+        <text x="324" y="534" class="date ink">27</text>
+        <text x="474" y="534" class="date ink">28</text>
+        <text x="624" y="534" class="date ink">29</text>
+        <text x="774" y="534" class="date ink">30</text>
+        <text x="924" y="534" class="date ink">31</text>
 
-        <text x="45" y="522" class="day ink">25</text>
-        <text x="225" y="522" class="day ink">26</text>
-        <text x="415" y="522" class="day ink">27</text>
-        <text x="605" y="522" class="day ink">28</text>
-        <text x="795" y="522" class="day ink">29</text>
-        <text x="985" y="522" class="day ink">30</text>
-        <text x="1175" y="522" class="day ink">31</text>
+        <text x="75" y="66" text-anchor="middle" class="cell-head ink">OPEN PLAY</text>
+        <text x="75" y="90" text-anchor="middle" class="cell-sub ink">3pm-7pm</text>
 
-        <text x="48" y="79" class="cell-head ink">OPEN PLAY</text>
-        <text x="48" y="107" class="label ink">11am-4pm</text>
+        <text x="225" y="66" text-anchor="middle" class="cell-head ink">OPEN PLAY</text>
+        <text x="225" y="90" text-anchor="middle" class="cell-sub ink">3pm-7pm</text>
 
-        <text x="238" y="79" class="cell-head ink">CLOSED</text>
-        <text x="415" y="79" class="cell-head ink">OPEN PLAY</text>
-        <text x="416" y="107" class="label ink">3pm-7pm</text>
-        <text x="605" y="79" class="cell-head ink">OPEN PLAY</text>
-        <text x="606" y="107" class="label ink">3pm-7pm</text>
-        <text x="795" y="79" class="cell-head ink">OPEN PLAY</text>
-        <text x="796" y="107" class="label ink">3pm-7pm</text>
-        <text x="985" y="79" class="cell-head ink">OPEN PLAY</text>
-        <text x="986" y="107" class="label ink">3pm-7pm</text>
-        <text x="1175" y="79" class="cell-head ink">OPEN PLAY</text>
-        <text x="1176" y="107" class="label ink">11am-4pm</text>
+        <text x="375" y="66" text-anchor="middle" class="cell-head ink">CLOSED</text>
 
-        <text x="238" y="223" class="cell-head ink">CLOSED</text>
-        <text x="416" y="223" class="cell-head ink">OPEN PLAY</text>
-        <text x="416" y="251" class="label ink">3pm-7pm</text>
-        <text x="604" y="223" class="cell-head ink">CLOSED</text>
-        <text x="795" y="223" class="cell-head ink">CLOSED</text>
-        <text x="985" y="223" class="cell-head ink">CLOSED</text>
-        <text x="1175" y="223" class="cell-head ink">OPEN PLAY</text>
-        <text x="1176" y="251" class="label ink">11am-2pm</text>
+        <text x="75" y="186" text-anchor="middle" class="cell-head ink">OPEN PLAY</text>
+        <text x="75" y="210" text-anchor="middle" class="cell-sub ink">11am-4pm</text>
 
-        <text x="48" y="367" class="cell-head ink">OPEN PLAY</text>
-        <text x="49" y="395" class="label ink">11am-2pm</text>
-        <text x="238" y="367" class="cell-head ink">CLOSED</text>
-        <text x="415" y="367" class="cell-head ink">MORNING</text>
-        <text x="392" y="388" class="cell-head ink">OPEN PLAY</text>
-        <text x="407" y="406" class="label ink">10am-12pm</text>
-        <text x="605" y="367" class="cell-head ink">CLOSED</text>
-        <text x="795" y="367" class="cell-head ink">CLOSED</text>
-        <text x="985" y="367" class="cell-head ink">OPEN PLAY</text>
-        <text x="986" y="395" class="label ink">3pm-7pm</text>
-        <text x="1175" y="367" class="cell-head ink">OPEN PLAY</text>
-        <text x="1176" y="395" class="label ink">11am-4pm</text>
+        <text x="225" y="186" text-anchor="middle" class="cell-head ink">CLOSED</text>
 
-        <text x="48" y="511" class="cell-head ink">OPEN PLAY</text>
-        <text x="49" y="539" class="label ink">11am-4pm</text>
-        <text x="238" y="511" class="cell-head ink">CLOSED</text>
-        <text x="416" y="511" class="cell-head ink">OPEN PLAY</text>
-        <text x="416" y="539" class="label ink">3pm-7pm</text>
-        <text x="605" y="511" class="cell-head ink">OPEN PLAY</text>
-        <text x="606" y="539" class="label ink">3pm-7pm</text>
-        <text x="795" y="511" class="cell-head ink">OPEN PLAY</text>
-        <text x="796" y="539" class="label ink">3pm-7pm</text>
-        <text x="985" y="511" class="cell-head ink">OPEN PLAY</text>
-        <text x="986" y="539" class="label ink">3pm-7pm</text>
-        <text x="1175" y="511" class="cell-head ink">HALLOWEEN</text>
-        <text x="1178" y="532" class="cell-head ink">OPEN PLAY</text>
-        <text x="1175" y="550" class="label ink">11am-4pm</text>
+        <text x="375" y="186" text-anchor="middle" class="cell-head ink">OPEN PLAY</text>
+        <text x="375" y="210" text-anchor="middle" class="cell-sub ink">3pm-7pm</text>
 
-        <text x="155" y="103" class="tiny ink">01</text>
-        <text x="345" y="103" class="tiny ink">02</text>
-        <text x="535" y="103" class="tiny ink">03</text>
-        <text x="725" y="103" class="tiny ink">04</text>
-        <text x="915" y="103" class="tiny ink">05</text>
-        <text x="1105" y="103" class="tiny ink">06</text>
-        <text x="1295" y="103" class="tiny ink">07</text>
+        <text x="525" y="186" text-anchor="middle" class="cell-head ink">OPEN PLAY</text>
+        <text x="525" y="210" text-anchor="middle" class="cell-sub ink">3pm-7pm</text>
 
-        <text x="155" y="247" class="tiny ink">08</text>
-        <text x="345" y="247" class="tiny ink">09</text>
-        <text x="535" y="247" class="tiny ink">10</text>
-        <text x="725" y="247" class="tiny ink">11</text>
-        <text x="915" y="247" class="tiny ink">12</text>
-        <text x="1105" y="247" class="tiny ink">13</text>
-        <text x="1295" y="247" class="tiny ink">14</text>
+        <text x="675" y="186" text-anchor="middle" class="cell-head ink">OPEN PLAY</text>
+        <text x="675" y="210" text-anchor="middle" class="cell-sub ink">3pm-7pm</text>
 
-        <text x="155" y="391" class="tiny ink">15</text>
-        <text x="345" y="391" class="tiny ink">16</text>
-        <text x="535" y="391" class="tiny ink">17</text>
-        <text x="725" y="391" class="tiny ink">18</text>
-        <text x="915" y="391" class="tiny ink">19</text>
-        <text x="1105" y="391" class="tiny ink">20</text>
-        <text x="1295" y="391" class="tiny ink">21</text>
+        <text x="825" y="186" text-anchor="middle" class="cell-head ink">OPEN PLAY</text>
+        <text x="825" y="210" text-anchor="middle" class="cell-sub ink">3pm-7pm</text>
 
-        <text x="155" y="535" class="tiny ink">22</text>
-        <text x="345" y="535" class="tiny ink">23</text>
-        <text x="535" y="535" class="tiny ink">24</text>
-        <text x="725" y="535" class="tiny ink">25</text>
-        <text x="915" y="535" class="tiny ink">26</text>
-        <text x="1105" y="535" class="tiny ink">27</text>
-        <text x="1295" y="535" class="tiny ink">28</text>
+        <text x="975" y="186" text-anchor="middle" class="cell-head ink">OPEN PLAY</text>
+        <text x="975" y="210" text-anchor="middle" class="cell-sub ink">11am-4pm</text>
 
-        <text x="155" y="679" class="tiny ink">29</text>
-        <text x="345" y="679" class="tiny ink">30</text>
-        <text x="535" y="679" class="tiny ink">31</text>
+        <text x="75" y="306" text-anchor="middle" class="cell-head ink">OPEN PLAY</text>
+        <text x="75" y="330" text-anchor="middle" class="cell-sub ink">11am-4pm</text>
+
+        <text x="225" y="306" text-anchor="middle" class="cell-head ink">CLOSED</text>
+
+        <text x="375" y="306" text-anchor="middle" class="cell-head ink">OPEN PLAY</text>
+        <text x="375" y="330" text-anchor="middle" class="cell-sub ink">3pm-7pm</text>
+
+        <text x="525" y="306" text-anchor="middle" class="cell-head ink">CLOSED</text>
+
+        <text x="675" y="306" text-anchor="middle" class="cell-head ink">CLOSED</text>
+
+        <text x="825" y="306" text-anchor="middle" class="cell-head ink">CLOSED</text>
+
+        <text x="975" y="306" text-anchor="middle" class="cell-head ink">OPEN PLAY</text>
+        <text x="975" y="330" text-anchor="middle" class="cell-sub ink">11am-2pm</text>
+
+        <text x="75" y="426" text-anchor="middle" class="cell-head ink">OPEN PLAY</text>
+        <text x="75" y="450" text-anchor="middle" class="cell-sub ink">11am-2pm</text>
+
+        <text x="225" y="426" text-anchor="middle" class="cell-head ink">CLOSED</text>
+
+        <text x="375" y="426" text-anchor="middle" class="cell-head ink">MORNING</text>
+        <text x="375" y="447" text-anchor="middle" class="cell-head ink">OPEN PLAY</text>
+        <text x="375" y="470" text-anchor="middle" class="cell-sub ink">10am-12pm</text>
+
+        <text x="525" y="426" text-anchor="middle" class="cell-head ink">CLOSED</text>
+
+        <text x="675" y="426" text-anchor="middle" class="cell-head ink">CLOSED</text>
+
+        <text x="825" y="426" text-anchor="middle" class="cell-head ink">OPEN PLAY</text>
+        <text x="825" y="450" text-anchor="middle" class="cell-sub ink">3pm-7pm</text>
+
+        <text x="975" y="426" text-anchor="middle" class="cell-head ink">OPEN PLAY</text>
+        <text x="975" y="450" text-anchor="middle" class="cell-sub ink">11am-4pm</text>
+
+        <text x="75" y="546" text-anchor="middle" class="cell-head ink">OPEN PLAY</text>
+        <text x="75" y="570" text-anchor="middle" class="cell-sub ink">11am-4pm</text>
+
+        <text x="225" y="546" text-anchor="middle" class="cell-head ink">CLOSED</text>
+
+        <text x="375" y="546" text-anchor="middle" class="cell-head ink">OPEN PLAY</text>
+        <text x="375" y="570" text-anchor="middle" class="cell-sub ink">3pm-7pm</text>
+
+        <text x="525" y="546" text-anchor="middle" class="cell-head ink">OPEN PLAY</text>
+        <text x="525" y="570" text-anchor="middle" class="cell-sub ink">3pm-7pm</text>
+
+        <text x="675" y="546" text-anchor="middle" class="cell-head ink">OPEN PLAY</text>
+        <text x="675" y="570" text-anchor="middle" class="cell-sub ink">3pm-7pm</text>
+
+        <text x="825" y="546" text-anchor="middle" class="cell-head ink">OPEN PLAY</text>
+        <text x="825" y="570" text-anchor="middle" class="cell-sub ink">3pm-7pm</text>
+
+        <text x="975" y="546" text-anchor="middle" class="cell-head ink">HALLOWEEN</text>
+        <text x="975" y="570" text-anchor="middle" class="cell-head ink">OPEN PLAY</text>
+        <text x="975" y="594" text-anchor="middle" class="cell-sub ink">11am-4pm</text>
       </g>
     </g>
 
-    <g transform="translate(1325,200)">
+    <g transform="translate(1115,176)">
       <text x="0" y="0" class="notes ink">Notes</text>
 
-      <g transform="translate(0,48)">
-        <circle cx="8" cy="8" r="7" fill="#2f2f2f"/>
-        <text x="28" y="16" class="notes muted">Curious Babies are for</text>
+      <g transform="translate(0,28)">
+        <circle cx="10" cy="12" r="7" class="bullet"/>
+        <text x="28" y="18" class="notes muted">Curious Babies are for</text>
         <text x="28" y="42" class="notes muted">toddlers 9m-1yrs</text>
       </g>
-      <g transform="translate(0,92)">
-        <circle cx="8" cy="8" r="7" fill="#2f2f2f"/>
-        <text x="28" y="16" class="notes muted">Toddler Time are for</text>
+
+      <g transform="translate(0,82)">
+        <circle cx="10" cy="12" r="7" class="bullet"/>
+        <text x="28" y="18" class="notes muted">Toddler Time are for</text>
         <text x="28" y="42" class="notes muted">children ages 1-3 yrs</text>
       </g>
+
       <g transform="translate(0,136)">
-        <circle cx="8" cy="8" r="7" fill="#2f2f2f"/>
-        <text x="28" y="16" class="notes muted">Open play are subject to</text>
+        <circle cx="10" cy="12" r="7" class="bullet"/>
+        <text x="28" y="18" class="notes muted">Open play are subject to</text>
         <text x="28" y="42" class="notes muted">change on Sat/Su due to</text>
-        <text x="28" y="68" class="notes muted">birthday parties</text>
+        <text x="28" y="66" class="notes muted">birthday parties</text>
       </g>
-      <g transform="translate(0,215)">
-        <circle cx="8" cy="8" r="7" fill="#2f2f2f"/>
-        <text x="28" y="16" class="notes muted">ALL children are welcomed</text>
+
+      <g transform="translate(0,226)">
+        <circle cx="10" cy="12" r="7" class="bullet"/>
+        <text x="28" y="18" class="notes muted">ALL children are welcomed</text>
         <text x="28" y="42" class="notes muted">at anytime for Open play</text>
       </g>
-      <g transform="translate(0,272)">
-        <circle cx="8" cy="8" r="7" fill="#2f2f2f"/>
-        <text x="28" y="16" class="notes muted">All classes and special</text>
+
+      <g transform="translate(0,290)">
+        <circle cx="10" cy="12" r="7" class="bullet"/>
+        <text x="28" y="18" class="notes muted">All classes and special</text>
         <text x="28" y="42" class="notes muted">events must register</text>
-        <text x="28" y="68" class="notes muted">online</text>
+        <text x="28" y="66" class="notes muted">online</text>
       </g>
 
-      <text x="0" y="422" class="notes ink">Content Type</text>
+      <text x="0" y="430" class="notes ink">Content Type</text>
 
       <g transform="translate(0,452)">
-        <rect x="0" y="0" width="94" height="34" rx="17" fill="#d8e3e6"/>
-        <rect x="0" y="48" width="94" height="34" rx="17" fill="#d8cfe9"/>
-        <rect x="0" y="96" width="94" height="34" rx="17" fill="#f0d8a8"/>
-        <rect x="0" y="144" width="94" height="34" rx="17" fill="#f2f2f2"/>
-        <text x="52" y="24" text-anchor="middle" class="legend ink">OPEN PLAY</text>
-        <text x="52" y="72" text-anchor="middle" class="legend ink">CLASSES</text>
-        <text x="52" y="120" text-anchor="middle" class="legend ink">SPECIAL EVENTS</text>
-        <text x="52" y="168" text-anchor="middle" class="legend ink">PARENT EVENTS</text>
+        <rect x="0" y="0" width="126" height="34" rx="17" fill="#d9e7ea"/>
+        <rect x="0" y="48" width="126" height="34" rx="17" fill="#d9cfe9"/>
+        <rect x="0" y="96" width="126" height="34" rx="17" fill="#f0d8a8"/>
+        <rect x="0" y="144" width="126" height="34" rx="17" fill="#f2f2f2"/>
+
+        <text x="63" y="23" text-anchor="middle" class="legend ink">OPEN PLAY</text>
+        <text x="63" y="71" text-anchor="middle" class="legend ink">CLASSES</text>
+        <text x="63" y="119" text-anchor="middle" class="legend ink">SPECIAL EVENTS</text>
+        <text x="63" y="167" text-anchor="middle" class="legend ink">PARENT EVENTS</text>
       </g>
     </g>
   </g>
