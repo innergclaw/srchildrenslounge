@@ -32,42 +32,148 @@ main p {
   max-width: 60ch;
 }
 
-/* Show every menu link on wrapped rows instead of a cut-off sideways scroller. */
-.site-header .nav-links,
-.page > header .nav-links {
-  flex-wrap: wrap;
-  justify-content: center;
-  overflow: visible;
-}
-
-@media (max-width: 760px) {
-  .site-header .nav-links,
-  .page > header .nav-links {
-    gap: 6px;
-    padding-bottom: 2px;
-  }
-
-  .site-header .nav-links a,
-  .page > header .nav-links a {
-    min-height: 34px;
-    padding: 0 10px;
-    font-size: .68rem;
-  }
-}
-
 /* Centered footer lines are not body copy: keep them full width and centered. */
 main p.footer-note,
 main p.footer-note + p {
   max-width: none;
 }
 
-/* The header holds the logo plus a wrapped menu, so it is too tall to stay pinned.
-   Let it scroll away with the page so it never covers content. */
-.site-header {
-  position: static;
-  top: auto;
+/* Slim pinned header with a collapsible menu (driven by nav.js). */
+html {
+  scroll-padding-top: calc(var(--sr-header-h, 88px) + 24px);
 }
 
 main section {
-  scroll-margin-top: 16px;
+  scroll-margin-top: calc(var(--sr-header-h, 88px) + 24px);
+}
+
+header.site-header {
+  position: sticky;
+  top: 8px;
+  z-index: 1000;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 6px 10px 6px 12px;
+  border-radius: 26px;
+  background: rgba(255, 255, 255, .97);
+}
+
+header.site-header .brand {
+  flex: 0 0 auto;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  width: auto;
+  text-align: left;
+}
+
+header.site-header .brand img {
+  width: 72px;
+  height: 72px;
+}
+
+header.site-header .brand strong { font-size: 1rem; }
+header.site-header .brand span { margin-top: 2px; font-size: .62rem; letter-spacing: .1em; }
+
+header.site-header .nav-links,
+header.site-header .nav-links.is-open {
+  position: static;
+  flex: 1 1 auto;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  gap: 6px;
+  min-width: 0;
+  width: auto;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  opacity: 1;
+  overflow: hidden;
+  transform: none;
+  animation: none;
+}
+
+header.site-header .nav-links a {
+  flex: 0 0 auto;
+  min-height: 36px;
+  padding: 0 10px;
+  font-size: .68rem;
+  white-space: nowrap;
+}
+
+header.site-header.nav-measuring .nav-links {
+  justify-content: flex-start;
+}
+
+header.site-header .nav-toggle {
+  display: none;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+}
+
+header.site-header .nav-toggle:focus-visible,
+header.site-header .nav-links a:focus-visible {
+  outline: 3px solid var(--forest, #19c86a);
+  outline-offset: 3px;
+}
+
+header.site-header.nav-collapsed .nav-toggle {
+  display: inline-flex;
+}
+
+header.site-header.nav-collapsed .nav-links {
+  display: none;
+}
+
+header.site-header.nav-collapsed.nav-open .nav-links {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 8px;
+  max-height: calc(100vh - var(--sr-header-h, 88px) - 32px);
+  padding: 14px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  border: 1px solid rgba(25, 200, 106, .28);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, .98);
+  box-shadow: 0 28px 68px rgba(31, 31, 31, .2);
+}
+
+header.site-header.nav-collapsed.nav-open .nav-links a {
+  min-height: 44px;
+  font-size: .74rem;
+}
+
+@media (max-width: 760px) {
+  header.site-header { top: 6px; padding: 6px 8px 6px 10px; gap: 10px; }
+  header.site-header .brand img { width: 56px; height: 56px; }
+  header.site-header .brand strong { font-size: .95rem; }
+  header.site-header .brand span { font-size: .56rem; letter-spacing: .06em; }
+}
+
+@media (max-width: 420px) {
+  header.site-header .brand span { display: none; }
+}
+
+/* Back to top arrow drawn with borders. */
+.slide-to-top-icon {
+  display: block;
+  width: 13px;
+  height: 13px;
+  margin-top: 5px;
+  border-top: 3px solid currentColor;
+  border-left: 3px solid currentColor;
+  border-radius: 2px;
+  transform: rotate(45deg);
 }

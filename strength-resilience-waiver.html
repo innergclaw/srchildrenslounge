@@ -430,7 +430,12 @@
         </div>
       </a>
 
-      <nav class="nav-links" aria-label="Primary">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+        <span class="nav-toggle-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span class="nav-toggle-text">Menu</span>
+      </button>
+
+      <nav class="nav-links" id="site-nav" aria-label="Primary">
         <a href="index.html#home">Home</a>
         <a href="strength-resilience-book-now.html">Book Now</a>
         <a href="strength-resilience-book-a-party.html">Book a Party</a>
@@ -590,6 +595,7 @@
     </main>
   </div>
   <script src="assets/strength-resilience/flow.js"></script>
+  <script src="assets/strength-resilience/nav.js"></script>
   <script src="assets/strength-resilience/sr-family-intake.js"></script>
 </body>
 </html>

@@ -21,7 +21,7 @@
   topButton.className = "slide-to-top";
   topButton.type = "button";
   topButton.setAttribute("aria-label", "Slide to top");
-  topButton.textContent = "↑";
+  topButton.innerHTML = '<span class="slide-to-top-icon" aria-hidden="true"></span>';
   document.body.appendChild(topButton);
 
   const updateTopButton = () => {
