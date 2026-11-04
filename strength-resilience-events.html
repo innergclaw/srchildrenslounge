@@ -640,6 +640,7 @@
         <span class="eyebrow">Free event tickets</span>
         <h2>Get your free tickets.</h2>
         <p>Both December events are free. Grab a free ticket through our secure Square checkout. No payment is needed.</p>
+        <p class="sr-ticket-code"><strong>Tickets are free. Enter code FREE at checkout.</strong></p>
         <h3>Kids Book Fest, Sunday, December 6, 2026</h3>
         <p>12:00 PM to 4:00 PM. Free, unlimited tickets.</p>
         <div class="sr-ticket-list">
@@ -715,10 +716,10 @@
     // Paste each Square URL between the quotes. Empty = button shows "Tickets coming soon".
     // Once a URL is filled in, that button becomes a normal link that opens in a new tab.
     const SR_SQUARE_TICKET_URLS = {
-      bookFest: "",     // Kids Book Fest, Sun Dec 6, 12:00 PM to 4:00 PM (unlimited)
-      holiday11: "",    // SR Holiday Party, Sat Dec 12, 11:00 AM to 12:00 PM (10 spots)
-      holiday1230: "",  // SR Holiday Party, Sat Dec 12, 12:30 PM to 1:30 PM (10 spots)
-      holiday2: "",     // SR Holiday Party, Sat Dec 12, 2:00 PM to 3:00 PM (10 spots)
+      bookFest: "https://square.link/u/qzqL1axN",     // Kids Book Fest, Sun Dec 6, 12:00 PM to 4:00 PM (unlimited)
+      holiday11: "https://square.link/u/eGWHIRT5",    // SR Holiday Party, Sat Dec 12, 11:00 AM to 12:00 PM (10 spots)
+      holiday1230: "https://square.link/u/t9EnYb1X",  // SR Holiday Party, Sat Dec 12, 12:30 PM to 1:30 PM (10 spots)
+      holiday2: "https://square.link/u/82wiWqsf",     // SR Holiday Party, Sat Dec 12, 2:00 PM to 3:00 PM (10 spots)
     };
     document.querySelectorAll("[data-ticket]").forEach((btn) => {
       const url = (SR_SQUARE_TICKET_URLS[btn.dataset.ticket] || "").trim();
