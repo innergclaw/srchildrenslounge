@@ -1,0 +1,62 @@
+/* Structure and fit pass: loaded last on every page so it wins over page styles. */
+
+/* Grid and flex children may shrink instead of pushing text past their panel. */
+.hero > *,
+.hero-copy > *,
+main section > *,
+main [class*="grid"] > * {
+  min-width: 0;
+}
+
+/* Long words and URLs wrap instead of overflowing. */
+main h1,
+main h2,
+main h3,
+main p,
+main li {
+  overflow-wrap: break-word;
+}
+
+/* Readable line length for body copy. */
+main p {
+  max-width: 68ch;
+}
+
+/* Hero headings sized for a half-width column so the intro text fits its panel. */
+.hero h1 {
+  font-size: clamp(2.6rem, 6vw, 5.6rem);
+  line-height: 1;
+}
+
+.hero p {
+  max-width: 60ch;
+}
+
+/* Show every menu link on wrapped rows instead of a cut-off sideways scroller. */
+.site-header .nav-links,
+.page > header .nav-links {
+  flex-wrap: wrap;
+  justify-content: center;
+  overflow: visible;
+}
+
+@media (max-width: 760px) {
+  .site-header .nav-links,
+  .page > header .nav-links {
+    gap: 6px;
+    padding-bottom: 2px;
+  }
+
+  .site-header .nav-links a,
+  .page > header .nav-links a {
+    min-height: 34px;
+    padding: 0 10px;
+    font-size: .68rem;
+  }
+}
+
+/* Centered footer lines are not body copy: keep them full width and centered. */
+main p.footer-note,
+main p.footer-note + p {
+  max-width: none;
+}
