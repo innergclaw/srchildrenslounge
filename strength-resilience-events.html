@@ -605,7 +605,7 @@
                 <div class="event-fact"><strong>Location</strong><span>319 Easton Rd., Willow Grove, PA</span></div>
                 <div class="event-fact"><strong>Price</strong><span>Free</span></div>
               </div>
-              <a class="button primary" href="#event-register" data-register-event="Kids Book Fest">Register free</a>
+              <a class="button primary" href="#event-register">Get free tickets</a>
             </div>
           </article>
           <article class="upcoming-card">
@@ -615,70 +615,34 @@
               </a>
             </figure>
             <div class="upcoming-copy">
-              <span class="event-badge">Free ~ limited to 30 kids</span>
+              <span class="event-badge">Free ~ 3 time slots, 10 kids each</span>
               <h3>SR Holiday Party.</h3>
-              <p>Free open play, gingerbread decorating, and free gifts. Free thanks to a generous sponsor. 30 spots max, first come first served.</p>
+              <p>Free open play, gingerbread decorating, and free gifts. Free thanks to a generous sponsor. Three time slots with 10 kids each, first come first served.</p>
               <div class="event-facts">
-                <div class="event-fact"><strong>Date &amp; time</strong><span>Saturday, December 12, 2026 | 11:00 AM to 3:00 PM</span></div>
+                <div class="event-fact"><strong>Date &amp; time</strong><span>Saturday, December 12, 2026 | 11:00 AM to 12:00 PM, 12:30 PM to 1:30 PM, 2:00 PM to 3:00 PM</span></div>
                 <div class="event-fact"><strong>Location</strong><span>319 Easton Rd #A, Willow Grove, PA 19090</span></div>
-                <div class="event-fact"><strong>Price</strong><span>Free, first 30 kids</span></div>
+                <div class="event-fact"><strong>Price</strong><span>Free, 10 kids per time slot</span></div>
               </div>
-              <a class="button primary" href="#event-register" data-register-event="SR Holiday Party">Register free</a>
+              <a class="button primary" href="#event-register">Pick a time slot</a>
             </div>
           </article>
         </div>
       </section>
 
       <section class="sr-intake-panel" id="event-register">
-        <span class="eyebrow">Free event registration</span>
-        <h2>Save your spot.</h2>
-        <p>Register for a free event below. No payment is needed. The SR Sensory Gym team will follow up to confirm. The Holiday Party is limited to 30 kids, first come first served.</p>
-        <form data-sr-intake-form data-sr-free-event-form>
-          <input type="hidden" name="intake_type" value="event_registration" />
-          <input type="hidden" name="preferred_date" value="" />
-          <input type="hidden" name="preferred_time" value="" />
-          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;" aria-hidden="true" />
-          <div class="sr-form-grid">
-            <div class="sr-form-field full">
-              <label for="event-choice">Event</label>
-              <select id="event-choice" name="requested_service" required>
-                <option value="">Choose an event</option>
-                <option value="Kids Book Fest" data-date="2026-12-06" data-time="12:00 PM to 4:00 PM">Kids Book Fest, Sunday, December 6, 2026</option>
-                <option value="SR Holiday Party" data-date="2026-12-12" data-time="11:00 AM to 3:00 PM">SR Holiday Party, Saturday, December 12, 2026 (30 kids max)</option>
-              </select>
-            </div>
-            <div class="sr-form-field">
-              <label for="event-first-name">First name</label>
-              <input id="event-first-name" name="first_name" autocomplete="given-name" required />
-            </div>
-            <div class="sr-form-field">
-              <label for="event-last-name">Last name</label>
-              <input id="event-last-name" name="last_name" autocomplete="family-name" required />
-            </div>
-            <div class="sr-form-field">
-              <label for="event-phone">Phone</label>
-              <input id="event-phone" name="phone" type="tel" autocomplete="tel" required />
-            </div>
-            <div class="sr-form-field">
-              <label for="event-email">Email</label>
-              <input id="event-email" name="email" type="email" autocomplete="email" required />
-            </div>
-            <div class="sr-form-field">
-              <label for="event-child-names">Child name(s)</label>
-              <input id="event-child-names" name="child_names" required />
-            </div>
-            <div class="sr-form-field">
-              <label for="event-child-ages">Child age(s)</label>
-              <input id="event-child-ages" name="child_ages" required />
-            </div>
-            <div class="sr-form-field full">
-              <label for="event-message">Notes</label>
-              <textarea id="event-message" name="message" placeholder="Anything the team should know?"></textarea>
-            </div>
-            <p class="sr-form-status" data-sr-form-status aria-live="polite"></p>
-            <button class="button primary" type="submit">Register free</button>
-          </div>
-        </form>
+        <span class="eyebrow">Free event tickets</span>
+        <h2>Get your free tickets.</h2>
+        <p>Both December events are free. Grab a free ticket through our secure Square checkout. No payment is needed.</p>
+        <h3>Kids Book Fest, Sunday, December 6, 2026</h3>
+        <p>12:00 PM to 4:00 PM. Free, unlimited tickets.</p>
+        <!-- TODO: replace href with the real Square link for Kids Book Fest free tickets -->
+        <a class="button primary" href="#TODO-square-kids-book-fest" target="_blank" rel="noopener noreferrer">Get free Book Fest tickets</a>
+        <h3>SR Holiday Party, Saturday, December 12, 2026</h3>
+        <p>Choose one time slot. 10 spots per slot, free thanks to a generous sponsor.</p>
+        <!-- TODO: replace each href with the real Square link for that time slot (inventory 10) -->
+        <a class="button primary" href="#TODO-square-holiday-11am" target="_blank" rel="noopener noreferrer">11:00 AM to 12:00 PM | 10 spots</a>
+        <a class="button primary" href="#TODO-square-holiday-1230pm" target="_blank" rel="noopener noreferrer">12:30 PM to 1:30 PM | 10 spots</a>
+        <a class="button primary" href="#TODO-square-holiday-2pm" target="_blank" rel="noopener noreferrer">2:00 PM to 3:00 PM | 10 spots</a>
       </section>
 
       <section class="event-grid" aria-label="Event calendar details">
@@ -726,27 +690,5 @@
   <script src="assets/strength-resilience/flow.js"></script>
   <script src="assets/strength-resilience/nav.js"></script>
   <script src="assets/strength-resilience/sr-family-intake.js"></script>
-  <script>
-    (() => {
-      const form = document.querySelector("[data-sr-free-event-form]");
-      if (!form) return;
-      const select = form.querySelector("[name='requested_service']");
-      const sync = () => {
-        const opt = select.selectedOptions[0];
-        form.querySelector("[name='preferred_date']").value = (opt && opt.dataset.date) || "";
-        form.querySelector("[name='preferred_time']").value = (opt && opt.dataset.time) || "";
-      };
-      select.addEventListener("change", sync);
-      form.addEventListener("reset", () => setTimeout(sync, 0));
-      document.querySelectorAll("[data-register-event]").forEach((link) => {
-        link.addEventListener("click", () => {
-          select.value = link.dataset.registerEvent;
-          sync();
-          setTimeout(() => select.focus({ preventScroll: true }), 400);
-        });
-      });
-      sync();
-    })();
-  </script>
 </body>
 </html>
