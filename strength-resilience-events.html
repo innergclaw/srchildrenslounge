@@ -338,7 +338,7 @@
 
     .event-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 16px;
     }
 
@@ -369,6 +369,52 @@
         radial-gradient(circle at 92% 12%, rgba(25,200,106,.15) 0 100px, transparent 102px),
         linear-gradient(135deg, #ffffff, rgba(255,164,27,.08));
     }
+
+    .calendar-placeholder {
+      display: grid;
+      place-items: center;
+      min-height: clamp(220px, 34vw, 380px);
+      padding: 28px;
+      text-align: center;
+      border-style: dashed;
+      box-shadow: none;
+      background: rgba(255,164,27,.05);
+    }
+    .calendar-placeholder strong { display: block; font-size: 1.3rem; margin-bottom: 6px; }
+    .calendar-placeholder span { color: var(--muted); }
+
+    .past-events details {
+      border: 2px solid rgba(31,31,31,.1);
+      border-radius: 24px;
+      background: rgba(255,255,255,.6);
+      padding: 0 clamp(18px, 3vw, 28px);
+    }
+    .past-events summary {
+      display: flex; justify-content: space-between; align-items: center; gap: 16px;
+      padding: 20px 0; cursor: pointer; list-style: none;
+    }
+    .past-events summary::-webkit-details-marker { display: none; }
+    .past-events summary h2 { font-size: clamp(1.5rem, 2.6vw, 2.1rem); margin: 4px 0 0; color: var(--muted); }
+    .past-toggle {
+      flex: 0 0 auto; width: 12px; height: 12px; margin-right: 6px;
+      border-right: 2px solid var(--muted); border-bottom: 2px solid var(--muted);
+      transform: rotate(45deg); transition: transform .2s ease;
+    }
+    .past-events details[open] .past-toggle { transform: rotate(-135deg); }
+    .past-grid {
+      display: grid; gap: 16px; padding-bottom: 24px;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    }
+    .past-card {
+      padding: 14px; border-radius: 18px; border: 1px solid rgba(31,31,31,.08);
+      background: #ffffff; opacity: .85;
+    }
+    .past-card img {
+      width: 100%; height: 180px; object-fit: cover; display: block;
+      border-radius: 12px; margin-bottom: 12px; filter: saturate(.6);
+    }
+    .past-card h3 { font-size: 1.05rem; margin: 6px 0; }
+    .past-card p { margin: 0; color: var(--muted); font-size: .92rem; line-height: 1.5; }
 
     @media (max-width: 980px) {
       .hero,
@@ -472,47 +518,24 @@
       <section class="calendar-section" id="calendar">
         <div class="section-head">
           <div>
-            <span class="eyebrow">Event calendar</span>
-            <h2>Check the current schedule.</h2>
+            <span class="eyebrow">Upcoming events</span>
+            <h2>November events coming soon.</h2>
           </div>
         </div>
 
-        <figure class="calendar-card">
-          <img src="https://cdn.phototourl.com/member/2026-09-23-8c7899ea-3481-4fdd-bb0d-581e8a9fdb74.jpg" alt="SR Sensory Gym October 2026 event calendar and schedule" />
+        <figure class="calendar-card calendar-placeholder" aria-label="November calendar placeholder">
+          <div>
+            <strong>November 2026 calendar</strong>
+            <span>The new monthly calendar will be posted here soon.</span>
+          </div>
         </figure>
 
         <div class="calendar-booking">
           <p>
-            <strong>October schedule</strong>
-            Contact the team if you have a question about a date or event.
+            <strong>November schedule</strong>
+            Contact the team if you have a question about upcoming dates or events.
           </p>
-          <a class="button primary" href="mailto:Info@srchildrenslounge.com?subject=SR%20Sensory%20Gym%20October%20Calendar%20Question">Ask a question</a>
-        </div>
-      </section>
-
-      <section class="featured-event" aria-labelledby="halloween-title">
-        <figure>
-          <img src="assets/strength-resilience/sr-halloween-trick-or-treat-2026.jpg" alt="SR Halloween Trick or Treat flyer for October 31, 2026" />
-        </figure>
-        <div class="featured-event-copy">
-          <span class="eyebrow">Featured October event</span>
-          <h2 id="halloween-title">SR Halloween Trick or Treat.</h2>
-          <p>Join SR for trick-or-treating, costumes, music, and festive activities for the whole family.</p>
-          <div class="event-facts">
-            <div class="event-fact">
-              <strong>Date &amp; time</strong>
-              <span>October 31, 2026 | 12 PM-4 PM</span>
-            </div>
-            <div class="event-fact">
-              <strong>Location</strong>
-              <span>319 Easton Rd., Willow Grove, PA</span>
-            </div>
-            <div class="event-fact">
-              <strong>Price</strong>
-              <span>$15</span>
-            </div>
-          </div>
-          <a class="button primary" href="https://checkout.square.site/merchant/MLZ7ERDANNXQT/checkout/MCI5NL4JFA2TAHKYTYIG2WQO" target="_blank" rel="noopener noreferrer">Buy Halloween tickets</a>
+          <a class="button primary" href="mailto:Info@srchildrenslounge.com?subject=SR%20Sensory%20Gym%20November%20Calendar%20Question">Ask a question</a>
         </div>
       </section>
 
@@ -527,11 +550,34 @@
           <h3>Structured family activities.</h3>
           <p>Weekend movie days, toddler time, and class-style activities may appear on the monthly schedule.</p>
         </article>
-        <a class="event-card" href="https://checkout.square.site/merchant/MLZ7ERDANNXQT/checkout/MCI5NL4JFA2TAHKYTYIG2WQO" target="_blank" rel="noopener noreferrer">
-          <span class="event-label">October 31</span>
-          <h3>Halloween Trick or Treat.</h3>
-          <p>Trick-or-treating, costumes, music, and festive activities from 12 PM to 4 PM.</p>
-        </a>
+      </section>
+
+      <section class="past-events" id="past-events" aria-labelledby="past-events-title">
+        <details>
+          <summary>
+            <span>
+              <span class="eyebrow">Archive</span>
+              <h2 id="past-events-title">Past events</h2>
+            </span>
+            <span class="past-toggle" aria-hidden="true"></span>
+          </summary>
+          <div class="past-grid">
+            <article class="past-card">
+              <a href="https://cdn.phototourl.com/member/2026-09-23-8c7899ea-3481-4fdd-bb0d-581e8a9fdb74.jpg" target="_blank" rel="noopener noreferrer">
+                <img src="https://cdn.phototourl.com/member/2026-09-23-8c7899ea-3481-4fdd-bb0d-581e8a9fdb74.jpg" alt="SR Sensory Gym October 2026 event calendar and schedule" loading="lazy" />
+              </a>
+              <span class="event-label">October 2026</span>
+              <h3>October calendar.</h3>
+              <p>Open play, classes, and special events from October.</p>
+            </article>
+            <article class="past-card">
+              <img src="assets/strength-resilience/sr-halloween-trick-or-treat-2026.jpg" alt="SR Halloween Trick or Treat flyer for October 31, 2026" loading="lazy" />
+              <span class="event-label">October 31, 2026</span>
+              <h3>SR Halloween Trick or Treat.</h3>
+              <p>Trick-or-treating, costumes, music, and festive activities from 12 PM to 4 PM at 319 Easton Rd., Willow Grove, PA.</p>
+            </article>
+          </div>
+        </details>
       </section>
     </main>
   </div>
