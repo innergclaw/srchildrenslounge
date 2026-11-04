@@ -499,6 +499,13 @@
       .calendar-booking .button { width: 100%; }
       .event-facts { grid-template-columns: 1fr; }
     }
+    #event-register h3 { margin: 22px 0 4px; }
+    .sr-ticket-list { display: flex; flex-wrap: wrap; gap: 14px; margin: 10px 0 22px; }
+    .sr-ticket-item { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; max-width: 100%; }
+    .sr-ticket-btn { max-width: 100%; white-space: normal; text-align: center; }
+    .sr-ticket-btn[aria-disabled="true"] { opacity: .5; cursor: not-allowed; pointer-events: none; filter: grayscale(.6); }
+    .sr-ticket-note { font-size: .85rem; opacity: .75; }
+    .sr-ticket-note[hidden] { display: none; }
   </style>
   <link rel="stylesheet" href="assets/strength-resilience/layout-fit.css" />
 </head>
@@ -635,14 +642,28 @@
         <p>Both December events are free. Grab a free ticket through our secure Square checkout. No payment is needed.</p>
         <h3>Kids Book Fest, Sunday, December 6, 2026</h3>
         <p>12:00 PM to 4:00 PM. Free, unlimited tickets.</p>
-        <!-- TODO: replace href with the real Square link for Kids Book Fest free tickets -->
-        <a class="button primary" href="#TODO-square-kids-book-fest" target="_blank" rel="noopener noreferrer">Get free Book Fest tickets</a>
+        <div class="sr-ticket-list">
+          <div class="sr-ticket-item">
+            <a class="button primary sr-ticket-btn" data-ticket="bookFest" aria-disabled="true" role="link">Get free Book Fest tickets</a>
+            <small class="sr-ticket-note" data-ticket-note>Tickets coming soon</small>
+          </div>
+        </div>
         <h3>SR Holiday Party, Saturday, December 12, 2026</h3>
         <p>Choose one time slot. 10 spots per slot, free thanks to a generous sponsor.</p>
-        <!-- TODO: replace each href with the real Square link for that time slot (inventory 10) -->
-        <a class="button primary" href="#TODO-square-holiday-11am" target="_blank" rel="noopener noreferrer">11:00 AM to 12:00 PM | 10 spots</a>
-        <a class="button primary" href="#TODO-square-holiday-1230pm" target="_blank" rel="noopener noreferrer">12:30 PM to 1:30 PM | 10 spots</a>
-        <a class="button primary" href="#TODO-square-holiday-2pm" target="_blank" rel="noopener noreferrer">2:00 PM to 3:00 PM | 10 spots</a>
+        <div class="sr-ticket-list">
+          <div class="sr-ticket-item">
+            <a class="button primary sr-ticket-btn" data-ticket="holiday11" aria-disabled="true" role="link">11:00 AM to 12:00 PM | 10 spots</a>
+            <small class="sr-ticket-note" data-ticket-note>Tickets coming soon</small>
+          </div>
+          <div class="sr-ticket-item">
+            <a class="button primary sr-ticket-btn" data-ticket="holiday1230" aria-disabled="true" role="link">12:30 PM to 1:30 PM | 10 spots</a>
+            <small class="sr-ticket-note" data-ticket-note>Tickets coming soon</small>
+          </div>
+          <div class="sr-ticket-item">
+            <a class="button primary sr-ticket-btn" data-ticket="holiday2" aria-disabled="true" role="link">2:00 PM to 3:00 PM | 10 spots</a>
+            <small class="sr-ticket-note" data-ticket-note>Tickets coming soon</small>
+          </div>
+        </div>
       </section>
 
       <section class="event-grid" aria-label="Event calendar details">
@@ -689,6 +710,27 @@
   </div>
   <script src="assets/strength-resilience/flow.js"></script>
   <script src="assets/strength-resilience/nav.js"></script>
-  <script src="assets/strength-resilience/sr-family-intake.js"></script>
+  <script>
+    // TODO: PASTE SQUARE TICKET LINKS HERE. This is the only place to edit.
+    // Paste each Square URL between the quotes. Empty = button shows "Tickets coming soon".
+    // Once a URL is filled in, that button becomes a normal link that opens in a new tab.
+    const SR_SQUARE_TICKET_URLS = {
+      bookFest: "",     // Kids Book Fest, Sun Dec 6, 12:00 PM to 4:00 PM (unlimited)
+      holiday11: "",    // SR Holiday Party, Sat Dec 12, 11:00 AM to 12:00 PM (10 spots)
+      holiday1230: "",  // SR Holiday Party, Sat Dec 12, 12:30 PM to 1:30 PM (10 spots)
+      holiday2: "",     // SR Holiday Party, Sat Dec 12, 2:00 PM to 3:00 PM (10 spots)
+    };
+    document.querySelectorAll("[data-ticket]").forEach((btn) => {
+      const url = (SR_SQUARE_TICKET_URLS[btn.dataset.ticket] || "").trim();
+      if (!/^https:\/\//.test(url)) return;
+      btn.href = url;
+      btn.target = "_blank";
+      btn.rel = "noopener noreferrer";
+      btn.removeAttribute("aria-disabled");
+      btn.removeAttribute("role");
+      const note = btn.parentElement.querySelector("[data-ticket-note]");
+      if (note) note.hidden = true;
+    });
+  </script>
 </body>
 </html>
