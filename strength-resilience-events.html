@@ -370,6 +370,37 @@
         linear-gradient(135deg, #ffffff, rgba(255,164,27,.08));
     }
 
+    .calendar-card a { display: block; }
+    .calendar-notes {
+      margin: 0; padding: 16px 20px 16px 38px;
+      border-radius: 20px; background: rgba(255,164,27,.08);
+      color: var(--muted); line-height: 1.6;
+    }
+    .upcoming-events { display: grid; gap: 18px; }
+    .upcoming-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+    .upcoming-card {
+      display: grid; gap: 16px; align-content: start;
+      padding: 18px; border-radius: 24px;
+      border: 2px solid rgba(25, 200, 106, .3);
+      background: rgba(255,255,255,.86); box-shadow: var(--shadow);
+    }
+    .upcoming-card figure { margin: 0; overflow: hidden; border-radius: 18px; background: #ffffff; }
+    .upcoming-card figure a { display: block; }
+    .upcoming-card img { width: 100%; height: auto; display: block; }
+    .upcoming-copy { display: grid; gap: 12px; justify-items: start; }
+    .upcoming-copy h3 { margin: 0; font-size: clamp(1.6rem, 2.6vw, 2.2rem); }
+    .upcoming-copy p { margin: 0; color: var(--muted); line-height: 1.6; }
+    .upcoming-copy .event-facts { width: 100%; grid-template-columns: 1fr; margin: 4px 0; }
+    .event-badge {
+      display: inline-block; padding: 7px 14px; border-radius: 999px;
+      background: var(--forest); color: #ffffff;
+      font-weight: 800; font-size: .85rem; letter-spacing: .02em;
+    }
+    @media (max-width: 760px) {
+      .upcoming-grid { grid-template-columns: 1fr; }
+      .upcoming-copy .button { width: 100%; }
+    }
+
     .calendar-placeholder {
       display: grid;
       place-items: center;
@@ -518,25 +549,130 @@
       <section class="calendar-section" id="calendar">
         <div class="section-head">
           <div>
-            <span class="eyebrow">Upcoming events</span>
-            <h2>November events coming soon.</h2>
+            <span class="eyebrow">Event calendar</span>
+            <h2>November 2026</h2>
           </div>
         </div>
 
-        <figure class="calendar-card calendar-placeholder" aria-label="November calendar placeholder">
-          <div>
-            <strong>November 2026 calendar</strong>
-            <span>The new monthly calendar will be posted here soon.</span>
-          </div>
+        <figure class="calendar-card">
+          <a href="assets/strength-resilience/sr-calendar-november-2026.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="assets/strength-resilience/sr-calendar-november-2026.jpg" alt="SR Sensory Gym November 2026 event calendar and schedule" width="1800" height="1012" />
+          </a>
         </figure>
+
+        <ul class="calendar-notes">
+          <li>Curious Babies are for toddlers 9 months to 1 year. Toddler Time is for ages 1 to 3.</li>
+          <li>Open play may change on Saturday and Sunday due to birthday parties.</li>
+          <li>All children are welcome anytime for open play.</li>
+          <li>All classes and special events must register online.</li>
+        </ul>
 
         <div class="calendar-booking">
           <p>
             <strong>November schedule</strong>
-            Contact the team if you have a question about upcoming dates or events.
+            Contact the team if you have a question about a date or event.
           </p>
           <a class="button primary" href="mailto:Info@srchildrenslounge.com?subject=SR%20Sensory%20Gym%20November%20Calendar%20Question">Ask a question</a>
         </div>
+      </section>
+
+      <section class="upcoming-events" id="upcoming-events" aria-labelledby="upcoming-title">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Upcoming events</span>
+            <h2 id="upcoming-title">Save the date.</h2>
+          </div>
+        </div>
+        <div class="upcoming-grid">
+          <article class="upcoming-card">
+            <figure>
+              <a href="assets/strength-resilience/sr-kids-book-fest-2026.jpg" target="_blank" rel="noopener noreferrer">
+                <img src="assets/strength-resilience/sr-kids-book-fest-2026.jpg" alt="Kids Book Fest flyer for Sunday, December 6, 2026" loading="lazy" width="1141" height="1378" />
+              </a>
+            </figure>
+            <div class="upcoming-copy">
+              <span class="event-badge">Free ~ open registration</span>
+              <h3>Kids Book Fest.</h3>
+              <p>Meet some of the authors and shop children's books. Free event with unlimited registration.</p>
+              <div class="event-facts">
+                <div class="event-fact"><strong>Date &amp; time</strong><span>Sunday, December 6, 2026 | 12:00 PM to 4:00 PM</span></div>
+                <div class="event-fact"><strong>Location</strong><span>319 Easton Rd., Willow Grove, PA</span></div>
+                <div class="event-fact"><strong>Price</strong><span>Free</span></div>
+              </div>
+              <a class="button primary" href="#event-register" data-register-event="Kids Book Fest">Register free</a>
+            </div>
+          </article>
+          <article class="upcoming-card">
+            <figure>
+              <a href="assets/strength-resilience/sr-holiday-party-2026.jpg" target="_blank" rel="noopener noreferrer">
+                <img src="assets/strength-resilience/sr-holiday-party-2026.jpg" alt="SR Holiday Party flyer for Saturday, December 12, 2026" loading="lazy" width="1179" height="1270" />
+              </a>
+            </figure>
+            <div class="upcoming-copy">
+              <span class="event-badge">Free ~ limited to 30 kids</span>
+              <h3>SR Holiday Party.</h3>
+              <p>Free open play, gingerbread decorating, and free gifts. Free thanks to a generous sponsor. 30 spots max, first come first served.</p>
+              <div class="event-facts">
+                <div class="event-fact"><strong>Date &amp; time</strong><span>Saturday, December 12, 2026 | 11:00 AM to 3:00 PM</span></div>
+                <div class="event-fact"><strong>Location</strong><span>319 Easton Rd #A, Willow Grove, PA 19090</span></div>
+                <div class="event-fact"><strong>Price</strong><span>Free, first 30 kids</span></div>
+              </div>
+              <a class="button primary" href="#event-register" data-register-event="SR Holiday Party">Register free</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="sr-intake-panel" id="event-register">
+        <span class="eyebrow">Free event registration</span>
+        <h2>Save your spot.</h2>
+        <p>Register for a free event below. No payment is needed. The SR Sensory Gym team will follow up to confirm. The Holiday Party is limited to 30 kids, first come first served.</p>
+        <form data-sr-intake-form data-sr-free-event-form>
+          <input type="hidden" name="intake_type" value="event_registration" />
+          <input type="hidden" name="preferred_date" value="" />
+          <input type="hidden" name="preferred_time" value="" />
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;" aria-hidden="true" />
+          <div class="sr-form-grid">
+            <div class="sr-form-field full">
+              <label for="event-choice">Event</label>
+              <select id="event-choice" name="requested_service" required>
+                <option value="">Choose an event</option>
+                <option value="Kids Book Fest" data-date="2026-12-06" data-time="12:00 PM to 4:00 PM">Kids Book Fest, Sunday, December 6, 2026</option>
+                <option value="SR Holiday Party" data-date="2026-12-12" data-time="11:00 AM to 3:00 PM">SR Holiday Party, Saturday, December 12, 2026 (30 kids max)</option>
+              </select>
+            </div>
+            <div class="sr-form-field">
+              <label for="event-first-name">First name</label>
+              <input id="event-first-name" name="first_name" autocomplete="given-name" required />
+            </div>
+            <div class="sr-form-field">
+              <label for="event-last-name">Last name</label>
+              <input id="event-last-name" name="last_name" autocomplete="family-name" required />
+            </div>
+            <div class="sr-form-field">
+              <label for="event-phone">Phone</label>
+              <input id="event-phone" name="phone" type="tel" autocomplete="tel" required />
+            </div>
+            <div class="sr-form-field">
+              <label for="event-email">Email</label>
+              <input id="event-email" name="email" type="email" autocomplete="email" required />
+            </div>
+            <div class="sr-form-field">
+              <label for="event-child-names">Child name(s)</label>
+              <input id="event-child-names" name="child_names" required />
+            </div>
+            <div class="sr-form-field">
+              <label for="event-child-ages">Child age(s)</label>
+              <input id="event-child-ages" name="child_ages" required />
+            </div>
+            <div class="sr-form-field full">
+              <label for="event-message">Notes</label>
+              <textarea id="event-message" name="message" placeholder="Anything the team should know?"></textarea>
+            </div>
+            <p class="sr-form-status" data-sr-form-status aria-live="polite"></p>
+            <button class="button primary" type="submit">Register free</button>
+          </div>
+        </form>
       </section>
 
       <section class="event-grid" aria-label="Event calendar details">
@@ -583,5 +719,27 @@
   </div>
   <script src="assets/strength-resilience/flow.js"></script>
   <script src="assets/strength-resilience/sr-family-intake.js"></script>
+  <script>
+    (() => {
+      const form = document.querySelector("[data-sr-free-event-form]");
+      if (!form) return;
+      const select = form.querySelector("[name='requested_service']");
+      const sync = () => {
+        const opt = select.selectedOptions[0];
+        form.querySelector("[name='preferred_date']").value = (opt && opt.dataset.date) || "";
+        form.querySelector("[name='preferred_time']").value = (opt && opt.dataset.time) || "";
+      };
+      select.addEventListener("change", sync);
+      form.addEventListener("reset", () => setTimeout(sync, 0));
+      document.querySelectorAll("[data-register-event]").forEach((link) => {
+        link.addEventListener("click", () => {
+          select.value = link.dataset.registerEvent;
+          sync();
+          setTimeout(() => select.focus({ preventScroll: true }), 400);
+        });
+      });
+      sync();
+    })();
+  </script>
 </body>
 </html>
