@@ -60,3 +60,14 @@ main p.footer-note,
 main p.footer-note + p {
   max-width: none;
 }
+
+/* The header holds the logo plus a wrapped menu, so it is too tall to stay pinned.
+   Let it scroll away with the page so it never covers content. */
+.site-header {
+  position: static;
+  top: auto;
+}
+
+main section {
+  scroll-margin-top: 16px;
+}
